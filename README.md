@@ -1,2 +1,0 @@
-# portfolio
-sample digital work

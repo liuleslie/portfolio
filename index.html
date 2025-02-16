@@ -1,36 +1,182 @@
 <!DOCTYPE html>
-<html lang='en'>
-	<head>
-		<meta charset='utf-8'/>
-		<meta name='viewport' content='width=device-width, initial-scale=1'/>
-		<title>Leslie Liu</title>
-		<link rel='stylesheet' href='style.css'>
-	</head>
-	<body>
-		<header>
-			Leslie Liu is a designer based in St. Louis interested in the potential of poetic tech.<br><a target="_blank" href="https://liuleslie.github.io/LL_Info_Web.pdf">Resume.</a> <a target="_blank" href="https://liuleslie.github.io">Website.</a>
-		</header>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Selected Work</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="icon" type="image/x-icon" href="z-llfavi.svg">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="https://liuleslie.github.io/fonts.css">
+        <base target="_self">
+        <style>
+            body {
+                font-family: 'FELight', sans-serif; font-size:15px; letter-spacing: .5px; line-height: 1.3em;
+                background-color:whitesmoke;color:black;
+                margin:0.5em;
+                display:grid;grid-template-columns:1fr 2fr;
+            }
+            
+            #work {padding-top:1em;width:100%}
 
-		<main class="mainpage">
-			<section>
-				<a href="parkside.html">
-					<img src="images/casestudy_parkside.jpg">
-					Parkside Tool: a simple coffee ordering app
-				</a>
-			</section>
-			<section id="litebub">
-				<a href="litebub.html">
-					<img src="images/casestudy_litebub.jpg">
-					Litebub: swift, extended conversation
-				</a>
-			</section>
-			<section>
-				<a href="foxy.html">
-					<img src="images/casestudy_foxy.jpg">
-					Foxy: a guide to <em>Fantastic Mr. Fox</em>
-				</a>
-			</section>
-			
-		</main>
-	</body>
+            #work td {padding-left:0}
+            label {margin-right:1.5em}
+            tbody {display:grid; grid-template-columns: 1fr;margin-bottom:1em}
+            #filter-print:checked ~ #work tr[data-type-primary="filter-print"] {display: table-row;}
+            #filter-code:checked ~ #work tr[data-type-primary="filter-code"] {display: table-row;}
+            #filter-gen:checked ~ #work tr[data-type-primary="filter-gen"] {display: table-row;}
+            #filter-obj:checked ~ #work tr[data-type-primary="filter-obj"] {display: table-row;}
+            /* #filter-misc:checked ~ #work tr[data-type-primary="filter-misc"] {display: table-row;} */
+            tr {display:none;padding-top:0.125em;} /* border-top:0.5px blue dotted */
+            tr p {text-indent:2em}
+            tr p:last-child:has(a) {padding-left:0}
+            tr p:last-child {margin-bottom:2em}
+            td {padding:0 1em}
+            img {width:100%;display:block}
+            .info {color:mediumpurple;text-indent:0}
+
+            a {color:blue;text-decoration:none}
+            a:hover {color:purple}
+
+            #contentViewer { background-color:white;
+                width:100%;
+                height:90vh;
+                border:none;
+                display:block;
+                overflow:hidden;
+            }
+
+            @media (max-width:1000px) {
+                nav {position:relative;margin-bottom:3em;top:0;left:0}
+                #toTop {display:none}
+                main {width:100%;float:none}
+            }
+        </style>
+    </head>
+    <body> 
+        
+        <main id="everything">
+            
+            <input type="checkbox" id="filter-print" name="filter-print" checked>
+            <label for="filter-print">Print</label><br>
+
+            <input type="checkbox" id="filter-code" name="filter-code" checked>
+            <label for="filter-code">Code</label><br>
+
+            <input type="checkbox" id="filter-gen" name="filter-gen" checked>
+            <label for="filter-gen">Print + Code</label><br>
+
+            <input type="checkbox" id="filter-obj" name="filter-obj" checked>
+            <label for="filter-obj">Object</label><br>
+<!-- 
+            <input type="checkbox" id="filter-misc" name="filter-misc">
+            <label for="filter-misc">Etc.</label> -->
+
+            <table id="work"> 
+                <tbody>
+                    <tr data-type-primary="filter-print"><td><a href="pages/annual.html">Are.na Annual</a></td></tr>
+                    <tr data-type-primary="filter-code"><td><a href="pages/fnf.html">Fresh Not Frozen</a></td></tr>
+                    <tr data-type-primary="filter-obj"><td><a href="pages/iphone.html">Some texts on the iPhone</a></td></tr>
+                    <tr data-type-primary="filter-gen"><td><a href="pages/grass.html">Computer Grass is Natural Grass</a></td></tr>
+                    <tr data-type-primary="filter-gen"><td><a href="pages/ouija.html">Ouija Board Seance</a></td></tr>
+                    <tr data-type-primary="filter-gen"><td><a href="pages/basic.html">Basic Space</a></td></tr>
+                    <tr data-type-primary="filter-print"><td><a href="pages/nostalgia.html">Nostalgia Loop</a></td></tr>
+                    <tr data-type-primary="filter-gen"><td><a href="pages/engine.html">Meme Engine Sampler</a></td></tr>
+                    <tr data-type-primary="filter-print"><td><a href="pages/junkyard.html">This book you are holding is a junkyard</a></td></tr>
+                    <tr data-type-primary="filter-code"><td><a href="pages/memgarden.html">memory garden</a></td></tr>
+                    <tr data-type-primary="filter-code"><td><a href="pages/window.html">A Window For Two</a></td></tr>
+                    <tr data-type-primary="filter-code"><td><a href="pages/refringo.html">Refringo</a></td></tr>
+
+
+                </tbody>
+            </table>
+        </main>
+
+
+        <section id="viewer">
+            <iframe id="contentViewer" width="100%" height="600px">
+            </iframe>
+        </section>
+    </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const iframe = document.getElementById("contentViewer");
+            const defaultPage = "pages/default.html"; // Set your default page here
+    
+            // Load default page into iframe on page load
+            iframe.src = defaultPage;
+    
+            // Select all links inside the table
+            const links = document.querySelectorAll("#work a");
+    
+            // Add click event listener to each link
+            links.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent default navigation
+                    
+                    const url = this.href; // Get the href attribute of the clicked link
+                    iframe.src = url; // Load URL in iframe
+                });
+            });
+    
+            // Function to update links inside the iframe to open in a new tab
+            function updateIframeLinks() {
+                try {
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    const iframeLinks = iframeDoc.querySelectorAll("a");
+    
+                    iframeLinks.forEach(link => {
+                        link.setAttribute("target", "_blank"); // Open links in a new tab
+                        link.setAttribute("rel", "noopener noreferrer"); // Security best practice
+                    });
+    
+                    // Set up a MutationObserver to handle dynamically added links
+                    const observer = new MutationObserver(() => {
+                        const newLinks = iframeDoc.querySelectorAll("a");
+                        newLinks.forEach(link => {
+                            link.setAttribute("target", "_blank");
+                            link.setAttribute("rel", "noopener noreferrer");
+                        });
+                    });
+    
+                    observer.observe(iframeDoc.body, { childList: true, subtree: true });
+                } catch (error) {
+                    console.warn("Cannot access iframe content due to cross-origin restrictions.");
+                }
+            }
+    
+            // Run update function when iframe content loads
+            iframe.addEventListener("load", updateIframeLinks);
+        });
+    </script>
+    
+
+    
+<!--     
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const iframe = document.getElementById("contentViewer");
+            const defaultPage = "pages/default.html"; // Set your default page here
+    
+            // Load default page into iframe on page load
+            iframe.src = defaultPage;
+    
+            // Select all links inside the table
+            const links = document.querySelectorAll("#work a");
+    
+            // Add click event listener to each link
+            links.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent default navigation
+                    
+                    const url = this.href; // Get the href attribute of the clicked link
+                    iframe.src = url; // Load URL in iframe
+                });
+            });
+        });
+    </script> 
+     -->
 </html>
