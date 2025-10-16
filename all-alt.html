@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Leslie’s Work</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="z-llfavi.svg">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="https://liuleslie.github.io/fonts.css">
+        <base target="_self">
+        <style>
+            body {
+                /* should there be a max width? */
+                font-family: 'FELight', sans-serif; font-size:15px; letter-spacing: .5px; line-height: 1.3em;
+                background-color:whitesmoke;color:black;
+                margin:1em;
+                display:grid;grid-template-columns:1fr 4fr
+            }
+
+            #filter-code:checked ~ #work tr[data-type-primary="code"] { display: table-row; }
+            #filter-book:checked ~ #work tr[data-type-primary="book"] { display: table-row; }
+            #filter-happening:checked ~ #work tr[data-type-primary="happening"] { display: table-row; }
+            tr.code h1, tr[data-type-primary="code"] details[open] summary, label[for="filter-code"] { color:dodgerblue }
+            tr.book h1, tr[data-type-primary="book"] details[open] summary, label[for="filter-book"] { color:chocolate }
+            tr.happening h1,tr[data-type-primary="happening"] details[open] summary, label[for="filter-happening"] { color:hotpink }
+            
+            /* header * { border: 0.2px silver solid } */
+            /* tr { border-bottom: 0.2px silver solid } */
+            header section { background-color:whitesmoke }
+            header section:hover { background-color:white; }
+
+            a {color:black;text-decoration:1px wavy red underline} /* 6B8E23 */
+            a:hover { text-decoration:none;background-color:whitesmoke }
+
+            h1, h2 { font-size: 1em; font-weight:normal; font-family: 'FELight',sans-serif }
+            h2 { color:gray; margin-bottom:-1em; }
+            h1 + p { margin-top: -0.5em; }
+
+            main section summary { font-family:'FELight',sans-serif;margin:0.5em auto 0em auto;
+                position:sticky; top:0 }
+            main section details[open] { background-color:#ebebeb;padding-bottom:0.25em }
+            main section details[open] summary { padding-bottom:1em;border-bottom:1px dotted silver;font-family:'FELight',sans-serif;background-color:whitesmoke; }
+            .title { font-weight:500;font-family:'FEReg',sans-serif;margin-right:1em }
+
+            header section, .cat { position:sticky; top:1em }
+            header article summary { margin-bottom:0; }
+            section details p, article details p { padding-left:1em }
+            ul { list-style-type: none; padding-left:1em; margin-top:0.5em }
+            ul li { text-indent: 0; margin-bottom:0.5em }
+            #wesley:hover { background-color:deepskyblue;text-decoration:none }
+
+            label { padding-right: 1em; }
+            #work tr { display: none; }
+            tbody { display:grid;grid-template-columns:1fr 1fr }
+            tr { margin:20px 10px 20px 10px; }
+            main { margin: auto 1em }
+            img { display:block;width:100%;margin:auto }
+            details[open] {background-color:white}
+            .thanks, .thanks * { color:gray }
+            
+
+            @media (max-width:1200px) {
+                body, tbody { grid-template-columns:1fr }
+                header { margin:0em 1em 3em 1em }
+                header section { position:relative }
+                header section:hover { background-color:whitesmoke }
+                tr { margin:1.5em auto auto auto }
+            }
+
+        </style>
+    </head>
+    <body> 
+        <header>
+            <section>
+                <h1>Leslie Liu</h1>
+                <p>Interaction and communication designer based in EDT (UTC-4).</p>
+            </section>
+            <section>
+                <h1>Contact</h1>
+                <p><a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a>, <a href="mailto:liules@pm.me">Email</a></p>
+            </section>
+            <section>
+                <h1>Colophon</h1>
+                <details>
+                    <summary>Thank you,</summary>
+                    <ul>
+                        <li><a id="wesley" href="https://wesleyac.com">Wesley Aptekar-Cassels</a> — whose HTML + CSS list filtering demo helped me lay this website’s foundation;</li>
+                        <li><a href="https://solar.lowtechmagazine.com/about.html#how">Low-tech Magazine</a>, <a href="https://html.energy/">HTML Energy</a>, <a href="https://multidimensional.link/southland?">more*</a>, and <a href="https://www.are.na/leslie-liu/rockin-sites">more</a> for their influence.</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Author’s Note</summary>
+                    <p>This is self-contained HTML <a href="https://gossipsweb.net">coded from scratch</a> and set in <a href="http://osp.kitchen/foundry/fluxisch-else/">Fluxisch Else</a> from Open Source Publishing, if it loads for you. Website written using Visual Studio Code, hosted on GitHub via Microsoft.</p>
+                </details>
+            </section>     
+        </header>
+
+        <main>
+
+            <input class="cat" style="margin-left: 0.25em"  type="checkbox" id="filter-code" name="filter-code" checked>
+            <label class="cat" for="filter-code">Code</label>
+            <input class="cat" type="checkbox" id="filter-book" name="filter-book">
+            <label class="cat" for="filter-book">Book</label>
+            <input class="cat" type="checkbox" id="filter-happening" name="filter-happening" checked>
+            <label class="cat" for="filter-happening">Happening</label>
+
+
+            <table id="work" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr data-type-primary="code" class="code">
+                    <td>
+                        <img src="Goods/GBS_Main-dark.png" alt="A screenshot of dark gray book design software, open with a book spread showing grids and text boxes. On the right is an open panel of a list of scripts.">
+                        <details>
+                            <summary><span class="title">Generative Book Sprint Helper</span>[Working] InDesign script for programmatic book design.</summary>
+                            <p class="thanks">Advisor: Daragh Byrne.</p>
+                            <p>
+                                In-progress code for an InDesign script that programmatically lays out the contents of a book, 
+                                based on a design system adapted from a prior studio course.
+                            </p>
+                        </details>
+                    </td>
+                </tr>
+                <tr data-type-primary="happening" class="happening">
+                    <td>
+                        <img src="Goods/Ouija_Main-dark.png" alt="Three posters, side by side, which together read 'OUIJA BOARD SEANCE — OCT 30 — 9PM — LEMP BREWERY OFFICE.'">
+                        <details>
+                            <summary><span class="title">Ouija Board Seance</span>Participatory installation advertising a seance; three 24 × 36" posters.</summary>
+                            <p class="thanks">Collaborator: <a href="https://www.beszi.work/">Betsy Ellison</a></p>
+                            <p>Inspired by Moniker’s <em><a href="https://studiomoniker.com/projects/your-line-or-mine">Your Line or Mine</a></em> and Clement Valla’s <em><a href="http://clementvalla.com/work/mechanical-turk-alphabet/">Mechanical Turk Alphabets</a></em>, Betsy and I designed a set of three posters promoting a ouija board seance hosted by the St. Louis Paranormal Research Society (we are not affiliated).</p>
+                            <p>Each of the three posters is integral to the legibility of the message as a whole, with the sole instruction, “Roll the die and mark out the symbol you receive, as many times as you desire. A hidden message will appear.”</p>
+                            <img src="Goods/Ouija_InSitu.png" alt="Two images: on the left, some people walking past a brick building, upon which are mounted three posters. On the right: two people drawing on some posters with a permanent marker; the posters are taped to a brick wall.">
+                            <p>Starting off as a blank slate, the set plays with the illusion of endless possibility in its densely textured grid of seemingly random symbols. With each letter consisting of several individually “chosen” marks, event info emerges as the result of strangers’ collaboration over the span of a day.</p>
+                            <img src="Goods/Ouija_Detail.png" alt="Three images: on the left, three semi-translucent posters with several black lines marked on a grid of symbols. In the middle, a closeup shot of the symbols. On the right, two woodburned blocks of wooden dice next to the posters.">
+                        </details>
+                    </td>
+                </tr>
+                <tr data-type-primary="happening" class="happening">
+                    <td>
+                        <img src="Goods/LabsSocial_Main-dark.png" alt="Three AI-generated images atop a black background. The image on the left depicts a woman leaning into a man, in a car against a vibrant sunset. The image in the middle is of a cow, rendered in a graphic, posterized style, against an orange background atop a side view of a truck. On the right is a similarly tiled image; on the top, a woman points to something in the distance, another behind her looking on in shock. Below: a cat next to an indeterminate form that resembles a clump of hair.">
+                        <details>
+                            <summary><span class="title">Labs Social</span>Social strategy & content, curation, and community management for labs.google.</summary>
+                            <p class="thanks">Team & Generous Testers: Brianna Doyle, Trudy Painter, Soyeon Kim, Shashwath Santosh, Sam Lawton (virtual IFSC). Jamie Barrar, James Scott, Beatriz Lozano, Kory Mathewson, Allan Holmes (in-person IFSC test)</p>
+                            <p>Concept development and facilitation of experimental workshops and events for the budding labs.google Discord community in its early days:</p>
+                            <ol>
+                                <li>IFSC, ImageFX Speedprompting/Speedrunning Championships: wherein contestants use ImageFX to prompt images across four categories that resemble a target image as much as possible within a set time frame.</li>
+                                <li>A Discord community stream based in Google Slides exploring desktop interfaces using ImageFX; got folks acquainted with each other through personal sharing of their desktop setups, guided members as they recreated these desktops as architectural spaces using ImageFX. Promoted MusicFX’s DJ Mode feature by running background music as people tinkered.</li>
+                            </ol>
+                            <p>
+                                Also produced creative coding sketches using Google Labs’ AI Test Kitchen tools (ImageFX, TextFX, MusicFX, and ShiffBot) to explore workflows incorporating synthesized media.
+                            </p>
+                        </details>
+                    </td>
+                </tr>
+                <tr data-type-primary="book" class="book">
+                    <td>
+                        <img src="Goods/Annual_Main-dark.jpg" alt="A scan of an open book with a list of URLs against a black background.">
+                        <details>
+                            <summary><span class="title">Are.na Annual</span>A collection of essays, interviews, and artwork from the Are.na community; 4.5 × 7.7" books.</summary>
+                            <p class="thanks">Collaborators: Meg Miller, Daniel Pianetti</p>
+                            <img src="Goods/Annual_InSitu.png" alt="Two over-the-shoulder images of a person reading a book by the subway.">
+                            <p>Past annuals: <a href="https://store.are.na/products/are-na-annual-2025">2025</a>, <a href="https://store.are.na/products/are-na-annual-2024">2024</a>, <a href="https://store.are.na/products/are-na-annual-2023">2023</a>, <a href="https://store.are.na/products/are-na-annual-2022">2022</a>
+                            </p>
+                        </details>
+                    </td>
+                </tr>
+                <tr data-type-primary="book" class="book">
+                    <td>
+                        <img src="Goods/Junkyard_Main-dark.png" alt="Open spread of a book, typeset in a green font with a green geometric texture peeking through a cut-out area. The background is black.">
+                        <details>
+                            <summary><span class="title">This book you are holding is a junkyard</span>A personal take on carving a form for an essay about malware; 3.5 × 6.5" newsprint booklet.</summary>
+                            <p>Jussi Parikka’s essay, <a href="https://web.archive.org/web/20210306015309/https://malware.hetnieuweinstituut.nl/en/malware-operational-art-ifthen-geopolitics-and-tricksters">“Malware as Operational Art: On the If/Then of Geopolitics and Tricksters,”</a> encourages a reconsideration of glitches and instances of computer failure as the norm.</p>
+                            <img src="Goods/Junkyard_Overhead.jpg" alt="Overhead shot of an open book on a concrete ground. The text and images are green and the inner folds are densely textured with an unidentifiable pattern.">
+                            <p>The structure of this book references the skeletal syntax of the web and the layered, nested anatomy of HTML. Smaller moves — the unravelling typography and cut paper revealing a computer-generated texture on the inner folds — seek to reinforce this theme of perceived danger, offering an uneasy, anti-reader friendly experience.</p>
+                            <img src="Goods/Junkyard_Spreads.png" alt="Open spreads of a book, typeset in a green font with a green geometric texture peeking through cut-out sections of the page. Imagery is also set in green. The background is black.">
+                        </details>
+                    </td>
+                </tr>
+                <tr data-type-primary="code" class="code">
+                    <td>
+                        <img src="Goods/Memgarden_Main-dark.png" alt="A grid of glyphs, some slashes and others letters and asterisks. A black rectangle encloses some white text, overlaid atop the grid.">
+                        <details>
+                            <summary><span class="title">memory garden</span>A collection of anonymous memories; 400 × 400 px.</summary>
+                            <p>A speculative sketch of an online memory archive comprising anonymous memories submitted to <a href="https://new.thelittlememory.com/">the little memory</a>, a mobile journaling app.</p>
+                            <div style="padding:62.71% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1043380492?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="memory garden (demo)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                        </details>
+                    </td>
+                </tr>
+            </tbody>
+
+        </main>
+
+        
+        
+    </body>
+
+</html>
+
+
