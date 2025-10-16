@@ -14,23 +14,18 @@
             body {
                 font-family: 'FELight', sans-serif; font-size:15px; letter-spacing: .5px; line-height: 1.3em;
                 background-color:whitesmoke;color:black;
-                margin:1em;
+                margin:1em
             }
 
-            label { padding-right: 1em; }
-            #work tr { display: none; }
+            section { display:grid;grid-template-columns:1fr 1fr;margin:1em auto }
 
-            section { margin:1em auto }
-            img { display:block;width:50%;margin:auto 0 }
-            h1, h2 { font-size: 1em; font-weight:normal; font-family: 'FELight',sans-serif }
+            img { display:block;width:100%;margin:auto 0 }
             a {color:black;text-decoration:1px solid black underline} /* 6B8E23 */
-            a:hover { text-decoration:none;background-color:#dedede }
+            a:hover { text-decoration:none;color:gray }
 
             
-            @media (max-width:1200px) {
-                body, tbody { grid-template-columns:1fr }
-                header { margin:0em 1em 3em 1em }
-                tr { margin:1.5em auto auto auto }
+            @media (max-width:1000px) {
+                section {grid-template-columns:1fr}
             }
 
         </style>
@@ -51,9 +46,8 @@
         </main>
 
         <footer>
-            <p>Colophon</p>
-            <p>With thanks to <a id="wesley" href="https://wesleyac.com">Wesley Aptekar-Cassels</a>, whose HTML + CSS list filtering demo helped me lay this website’s foundation; <a href="https://solar.lowtechmagazine.com/about.html#how">Low-tech Magazine</a>, <a href="https://html.energy/">HTML Energy</a>, <a href="https://multidimensional.link/southland?">more*</a>, and <a href="https://www.are.na/leslie-liu/rockin-sites">more</a> for their influence.</p>
-            <p>This is self-contained HTML <a href="https://gossipsweb.net">coded from scratch</a> and set in <a href="http://osp.kitchen/foundry/fluxisch-else/">Fluxisch Else</a> from Open Source Publishing, if it loads for you. Website written using Visual Studio Code, hosted on GitHub via Microsoft.</p>
+            <p>More work, resume available upon request.</p>
+            <p>This is self-contained HTML <a href="https://gossipsweb.net">coded from scratch</a> and set in <a href="http://osp.kitchen/foundry/fluxisch-else/">Fluxisch Else</a> from Open Source Publishing, if it loads for you. Website written using Visual Studio Code, hosted on GitHub via Microsoft. With thanks to <a href="https://solar.lowtechmagazine.com/about.html#how">Low-tech Magazine</a>, <a href="https://html.energy/">HTML Energy</a>, <a href="https://multidimensional.link/southland?">more*</a>, and <a href="https://www.are.na/leslie-liu/rockin-sites">more</a> for their influence.</p>
         </footer>
         
     </body>
