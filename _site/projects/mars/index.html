@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://liuleslie.github.io/fonts.css" rel="stylesheet">
+    <title>Mars 2020 Hindsight</title>
+    <style>
+        body {
+            display:grid;grid-template-columns:1fr 4fr;
+            letter-spacing:0.4px;
+            font-family: 'FELight', sans-serif; font-size:15px; line-height: 1.33em;
+            background-color:whitesmoke;color:black;
+            margin:1em; 
+        }
+        a { color:black;text-decoration:1px #6B8E23 solid underline }
+        a:hover { text-decoration:none }
+        h1, h2 { font-size:1em; }
+        header article { margin-bottom:2em }
+        main { margin: 0 10vw auto 2em }
+
+
+        @media (max-width:1000px) {
+            body {
+                grid-template-columns: 1fr;
+            }
+            main { margin: 2em 0 0 0 }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <section>
+            <article>
+                <h1><a href="/index.html">Leslie Liu</a></h1>
+                <p style="margin-top:0.5em">Product, interaction, and communication designer bridging data-informed insights with humanist inquiry across disciplines for generative conversation and collaboration.</p>
+                <p>Based in EDT (UTC-4).</p>
+                <p>MS <a href="https://www.architecture.cmu.edu/computational-design">Computational Design</a> (Carnegie Mellon ’26).</p>
+            </article>
+            <article>
+                <h1>Contact</h1>
+                <p><a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a></p>
+            </article>
+            <article>
+                <h1 id="colophon">Colophon</h1>
+                <details>
+                    <summary>Author’s Note</summary>
+                    <p style="margin-top:0.5em">This is self-contained HTML <a href="https://gossipsweb.net">coded from scratch</a> and set in <a href="http://osp.kitchen/foundry/fluxisch-else/">Fluxisch Else</a> from Open Source Publishing, if it loads for you. Website written using Visual Studio Code in HTML+CSS+JS via <a href="https://www.11ty.dev/">Eleventy</a>, an understanding of which I wrangled via official + community docs and Sonnet 4.5, hosted on GitHub via Microsoft.</p>
+                    <p>Thank you: <a href="https://solar.lowtechmagazine.com/about.html#how">Low-tech Magazine</a>, <a href="https://html.energy/">HTML Energy</a>, <a href="https://multidimensional.link/southland?">more*</a>, and <a href="https://www.are.na/leslie-liu/rockin-sites">more</a> for your influence.</p>
+                </details>
+            </article>
+        </section>
+    </header>
+    <main>
+        <h1>Mars 2020 Hindsight</h1>
+        <p>The Mars 2020 mission requires meticulous coordination and communication across engineering, science, and operations to ensure that various teams can conduct research on Mars safely and efficiently. In order to convey contextual information—whether it be environmental or rover-specific—for decision making, Rover Operators need to correlate snapshots of various data across several decoupled tools, a manually intensive process that is also incredibly reliant on personal memory. This results in significant cognitive burden, makes planning time-consuming, and presents a barrier during training of new personnel, given the reliance on unwritten, institutional knowledge.</p>
+<p>Three images of people holding sketches of a map and rover, drawn from aerial view. In the rightmost image, a person holds their sketch with their left hand, their right pointing at a computer screen showing a map with drive segments.</p>
+<p>Design probes from contextual inquiry and interviews to better gain an appreciation for how Operators relate to their tools.</p>
+<p>Over the course of a ten-week design sprint including five weeks of explorations and experimentation, we developed Hindsight, a tool that incorporates a search engine so that Operators can more easily surface similar past drives from the mission, whether via discrete, human-defined conditions, or algorithmically inferred based on functional similarity to a reference drive.</p>
+<p>A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain. In the lower right are a long list of software logs.</p>
+<p>The rover’s position on the orbital map, drive imagery, and flight software logs all synchronized via playhead.</p>
+<p>To assist in engaged data analysis, we ensured that Hindsight is flexible to support side-by-side comparisons of past drives, outfitting the frontend with a playhead such that Operators can scrub along the trajectory of a drive. The interface’s layout is customizable to suit personal preference, showing relevant data unified in the same context.</p>
+<p>A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain, including aerial maps, camera imagery, and charts. The interface shows two drives, compared side-by-side.</p>
+<p>Tiled comparison view, which would be extended across monitors in practice.</p>
+<p>Advisors: Krys Blackwood, Santiago Lombeyda, Hillary Mushkin, Maggie Hendrie, Scott Davidoff, and Jenny Rodenhouse. Principal Investigators: Sammi Lei and Darwin Chiu.</p>
+
+    </main>
+</body>

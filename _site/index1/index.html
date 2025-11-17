@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Leslie’s Work</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="z-llfavi.svg">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="https://liuleslie.github.io/fonts.css">
+        <base target="_self">
+        <style>
+            body {
+                /* should there be a max width? */
+                letter-spacing:0.4px;
+                font-family: 'FELight', sans-serif; font-size:15px; line-height: 1.33em;
+                background-color:whitesmoke;color:black;
+                margin:1em;
+                
+            }
+
+            a {color:black;text-decoration:1px solid #6B8E23 underline;text-underline-offset:0.15em } /* 6B8E23 */
+            a:hover { text-decoration:none;background-color:#ebebeb }
+            p.thanks { color:gray }
+
+            body { display:grid; grid-template-columns: 1fr 4fr; }
+            main { margin: auto 10vw auto 1em }
+            img { display:block;width:100% }
+
+            figure { margin: auto 1em 2em 1em }
+            figcaption{ text-align:center;color:gray } /* font-size:0.9em; */
+
+            h1, h2 { font-size: 1em; font-family: 'FELight',sans-serif}
+            h2 { color:gray; margin-bottom:-1em; }
+            h1 + p { margin-top: -0.75em }
+            h1#colophon { margin-bottom:0 }
+
+            header section { position:sticky; top:0; }
+            header article summary { margin-bottom:0; }
+
+            main section { margin-bottom:2em }
+            /* main section summary p {margin: 0 auto;font-weight:normal;font-family:'FELight',sans-serif;text-indent:2em} */
+            main section summary { font-family:'FELight',sans-serif;margin:0.5em auto 0em auto;
+                position:sticky; top:0 }
+            main section details[open] { background-color:#ebebeb;padding-bottom:0.25em }
+            main section details[open] summary { padding-bottom:1em;border-bottom:1px dotted silver;font-family:'FELight',sans-serif;background-color:whitesmoke; }
+            .title { font-weight:500;font-family:'FEReg',sans-serif;margin-right:1em }
+            section details p, article details p { padding-left:1em }
+            ul { list-style-type: none; padding-left:1em; margin-top:0.5em }
+            ul li { text-indent: 0; margin-bottom:0.5em }
+            .caption {color:gray}
+            #wesley { color:deepskyblue; text-decoration: 1px solid deepskyblue underline }
+            #wesley:hover { color:whitesmoke; background-color:deepskyblue; text-decoration:none }
+
+            @media (max-width:1000px) {
+                body {grid-template-columns:1fr;}
+                header { margin-bottom:2em;position:relative }
+                main { margin:auto auto}
+                main h1 { position:relative }
+            }
+
+
+        </style>
+    </head>
+
+    <body> 
+        <header>
+            <section>
+                <article>
+                    <h1>Leslie Liu</h1>
+                    <p style="margin-top:0.5em">Product, interaction, and communication designer bridging data-informed insights with humanist inquiry across disciplines for generative conversation and collaboration.</p>
+                    <p>Based in EDT (UTC-4).</p>
+                    <p>MS <a href="https://www.architecture.cmu.edu/computational-design">Computational Design</a> (Carnegie Mellon ’26).</p>
+                </article>
+                <article>
+                    <h1>Contact</h1>
+                    <p><a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a></p>
+                </article>
+                <article>
+                    <h1 id="colophon">Colophon</h1>
+                    <details>
+                        <summary>Author’s Note</summary>
+                        <p style="margin-top:0.5em">This is self-contained HTML <a href="https://gossipsweb.net">coded from scratch</a> and set in <a href="http://osp.kitchen/foundry/fluxisch-else/">Fluxisch Else</a> from Open Source Publishing, if it loads for you. Website written using Visual Studio Code, hosted on GitHub via Microsoft.</p>
+                        <p>Thank you: <a href="https://solar.lowtechmagazine.com/about.html#how">Low-tech Magazine</a>, <a href="https://html.energy/">HTML Energy</a>, <a href="https://multidimensional.link/southland?">more*</a>, and <a href="https://www.are.na/leslie-liu/rockin-sites">more</a> for your influence.</p>
+                    </details>
+                </article>
+            </section>
+        </header>
+        <main>
+            <section>
+                <img src="Goods/M20_Main-Playback.png" alt="A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain. In the main area to the right are an enlarged image of a map, charts, and camera imagery.">
+                <details>
+                    <summary>
+                        <span class="title">Mars 2020 Hindsight</span> A web-based interactive visualization tool that supports the Perseverance rover operations team in rapid retrieval 
+                        of relevant drive data for planning and fault investigation. With <a href="https://lukefiorante.com/">Luke Fiorante</a> for NASA Jet Propulsion Laboratory.
+                    </summary>
+                    <p>
+                        The Mars 2020 mission requires meticulous coordination and communication across engineering, science, and operations 
+                        to ensure that various teams can conduct research on Mars safely and efficiently. 
+                        In order to convey contextual information—whether it be environmental or rover-specific—for decision making, Rover Operators need to 
+                        correlate snapshots of various data across several decoupled tools, a manually intensive process that is also incredibly reliant on personal memory. 
+                        This results in significant cognitive burden, makes planning time-consuming, and presents a barrier during training of new personnel, 
+                        given the reliance on unwritten, institutional knowledge.
+                    </p>
+                    <figure>
+                        <img src="Goods/M20_Process.png" alt="Three images of people holding sketches of a map and rover, drawn from aerial view. In the rightmost image, a person holds their sketch with their left hand, their right pointing at a computer screen showing a map with drive segments.">
+                        <figcaption style="margin:1em auto 2em auto">Design probes from contextual inquiry and interviews to better gain an appreciation for how Operators relate to their tools.</figcaption>
+                    </figure>
+                    <p>
+                        Over the course of a ten-week design sprint including five weeks of explorations and experimentation, we developed Hindsight, a tool 
+                        that incorporates a search engine so that Operators can more easily surface similar past drives from the mission, 
+                        whether via discrete, human-defined conditions, or algorithmically inferred based on functional similarity to a reference drive.
+                    </p>
+                    <figure>
+                        <img src="Goods/M20_Synch-t.png" alt="A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain. In the lower right are a long list of software logs.">
+                        <figcaption>The rover’s position on the orbital map, drive imagery, and flight software logs all synchronized via playhead.</figcaption>
+                    </figure>
+                    <p>
+                        To assist in engaged data analysis, we ensured that Hindsight is flexible to support side-by-side comparisons of past drives, outfitting 
+                        the frontend with a playhead such that Operators can scrub along the trajectory of a drive. The interface’s layout is customizable to suit personal preference, 
+                        showing relevant data unified in the same context.
+                    </p>
+                    <figure>
+                        <img src="Goods/M20_Comp-t.png" alt="A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain, including aerial maps, camera imagery, and charts. The interface shows two drives, compared side-by-side.">
+                        <figcaption>Tiled comparison view, which would be extended across monitors in practice.</figcaption>
+                    </figure>
+                    <p class="thanks">Advisors: Krys Blackwood, Santiago Lombeyda, Hillary Mushkin, Maggie Hendrie, Scott Davidoff, and Jenny Rodenhouse. Principal Investigators: Sammi Lei and Darwin Chiu.</p>
+                </details>
+            </section>
+            <section>
+                <img src="Goods/DSS_Main.png" alt="A dark gray interface of a visualization tool that shows two rows of grayscale sky imagery. In the bottom: a list of potential objects from the imagery, a list of parameters, and a black and white chart.">
+                <details>
+                    <summary><span class="title">Digital Sky Surveys</span> A user experience probe for Caltech astronomers navigating high-dimensional multiwavelength data.</summary>
+                    <p>
+                        Observational astronomers and astrophysicists often work across different frequency ranges (“bands”) along the electromagnetic spectrum, 
+                        specializing in certain bands and their measuring instruments. Various facilities/observatories house these instruments, 
+                        releasing data at various cadences as part of various sky surveys. 
+                        This data takes two forms: images of the cosmos capturing potential astronomical objects, 
+                        and quantitative measurements of these potential objects that represent images abstractly. 
+                    </p>
+                    <p>
+                        Scientists face a Big Data problem given the sheer volume of data available—across multiple frequencies, 
+                        taken at different times, and measuring different properties—whose querying is fragmented and tied to 
+                        positional coordinates, making it challenging to get a sense of how one is situated within the data. 
+                        Image artifacts complicate this further, trickling down into catalogs and potentially biasing measurements. 
+                        Data validation and verification is thus crucial so that researchers can confirm that different representations of 
+                        a potential object across bands are correctly correlated for anomaly detection and hypothesis formation.
+                    </p>
+                    <p>
+                        Collaborating with radio astronomers at Caltech, I developed a frontend UX probe based on close observation 
+                        of their working methods and habits. The probe makes explicit data coverage of publicly available sky survey data over time and frequency,  
+                        and incorporates a dimensionality reduction flow so that researchers can define potential objects of interest, drawing from personal expertise and intuition.
+                    </p>
+                    <figure>
+                        <img src="Goods/DSS_SurvInfo-t.png" alt="A dark gray interface of a visualization tool with two panels of tabular data, a black and white chart, and a map of various data sources, marked out by timestamps.">
+                        <figcaption>Hovering over surveys in the Public Data pane shows imagery coverage over time.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Goods/DSS_Coverage-t.png" alt="A dark gray interface of a visualization tool that shows three rows of grayscale sky imagery.">
+                        <figcaption>The interface displays potential objects in rows of images across bands.</figcaption>
+                    </figure>
+                    <p>
+                        As a design provocation addressing a rich and multifaceted challenge emergent in the field for some time, this project 
+                        was an invaluable opportunity for me to learn how to impose design constraints and narrow scope as a complete outsider and novice. 
+                        Rapid, week-long co-design sessions informed the final prototype and the earlier exploratory phase called for making a wild range of 
+                        conversational artifacts, all with the goal of developing a common language to better clarify intent, 
+                        shared commonalities across subdomains, and the positionality of the project as it is situated within scientists’ methodologies.
+                    </p>
+                    <figure>
+                        <img src="Goods/DSS_Inq.png" alt="Three images: on the left, a screenshot of dark gray and blue transcription software. In the middle: various folded pieces of paper and sticky notes. On the right, a grayscale scan of sketches and notes.">
+                        <figcaption style="margin-top:1em">Human-centered design methods—including contextual inquiry—helped us arrive at a shared understanding of project goals.</figcaption>
+                    </figure>
+                    <p class="thanks">Advisors: Santiago Lombeyda, Hillary Mushkin, Maggie Hendrie, Krys Blackwood, Scott Davidoff, and Jenny Rodenhouse. Principal Investigators: Casey Law, Matthew Graham, and Martijn Simon Soen Liong Oei.</p>
+                </details>
+            </section>
+            <section>
+                <img src="Goods/GBS_Main.png" alt="A screenshot of dark gray book design software, open with a book spread showing grids and text boxes. On the right is an open panel of a list of scripts.">
+                <details>
+                    <summary>
+                        <span class="title">Generative Book Sprint Helper</span> [Working] InDesign script for programmatic book design.</p>
+                    </summary>
+                    <p>
+                        In-progress code for an InDesign script that programmatically lays out the contents of a book, 
+                        based on a design system adapted from a prior studio course.
+                    </p>
+                    <p class="thanks">Advisor: Daragh Byrne.</p>
+                </details>
+            </section>
+        </main>
+    </body>
+</html>
+
+
