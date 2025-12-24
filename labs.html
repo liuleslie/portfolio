@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Google Labs</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="z-llfavi.svg">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="https://liuleslie.github.io/fonts.css">
+        <link rel="stylesheet" href="commonStyles.css">
+        <base target="_self">
+        <style>
+            main h1 { margin-bottom:2em;font-family:'FEReg' }
+            video { width:90%; }
+            #videogallery { display:grid;grid-template-columns:1fr 1fr}
+            @media (max-width:1000px) {
+                #videogallery { grid-template-columns: 1fr }
+            }
+        </style>
+    </head>
+    <body> 
+        <header>
+            <section>
+                <h1><a href="index.html">Leslie Liu</a></h1>
+                <article>
+                    <details>
+                        <summary>About</summary>
+                        <p style="margin-top:0.5em">Product and interaction designer exploring how tools shape — and are shaped by — the people who use them. I work with technical users navigating complex data, combining interaction design, creative coding, and critical inquiry.</p>
+                        <p>Based in EDT (UTC-4).</p>
+                        <p>MS <a href="https://www.architecture.cmu.edu/computational-design">Computational Design</a> (Carnegie Mellon ’26).</p>
+                    </details>
+                </article>
+                <article>
+                    <details>
+                        <summary>Contact</summary>
+                        <p style="margin-top:0.5em"><a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a>, <a href="https://github.com/liuleslie?tab=repositories">GitHub</a></a></p>
+                    </details>
+                </article>
+                <article>
+                    <details>
+                        <summary>Colophon</summary>
+                        <p style="margin-top:0.5em">This is self-contained HTML <a href="https://gossipsweb.net">coded from scratch</a> and set in <a href="http://osp.kitchen/foundry/fluxisch-else/">Fluxisch Else</a> from Open Source Publishing, if it loads for you. Website written using Visual Studio Code, hosted on GitHub via Microsoft.</p>
+                        <p>Thank you: <a href="https://solar.lowtechmagazine.com/about.html#how">Low-tech Magazine</a>, <a href="https://html.energy/">HTML Energy</a>, <a href="https://multidimensional.link/southland?">more*</a>, and <a href="https://www.are.na/leslie-liu/rockin-sites">more</a> for your influence.</p>
+                    </details>
+                </article>
+                <nav><a href="index.html">&lt;&lt; index</a><br><br><a href="mars.html">[&nbsp;&nbsp;] Mars 2020 Hindsight</a><br><a href="cahill.html">[&nbsp;&nbsp;] Digital Sky Surveys</a><br><span class="currPage"><a href="labs.html">[X] Google Labs</a></span></nav>
+            </section>
+        </header>
+        <main class="project-main">
+            <h1>Google Labs</h1>
+            <p class="projectmeta">Fall 2023 – Spring 2024 at labs.google.<br>Role: Design Technologist (Maker in Residence).<br>Team: Brianna Doyle, Jamie Barrar, James Scott, Beatriz Lozano.<br>Additional support: Trudy Painter, Soyeon Kim, Shashwath Santosh, Sam Lawton; Kory Mathewson, Allan Holmes.</p>
+            <img src="Goods/Labs_Main.png" alt="Three AI-generated images atop a light grey background. The image on the left depicts a woman leaning into a man, in a car against a vibrant sunset. The image in the middle is of a cow, rendered in a graphic, posterized style, against an orange background atop a side view of a truck. On the right is a similarly tiled image; on the top, a woman points to something in the distance, another behind her looking on in shock. Below: a cat next to an indeterminate form that resembles a clump of hair.">
+            <p>
+                Collaborating with various product teams across Labs (AI Test Kitchen: TextFX, ImageFX, MusicFX; NotebookLM) and Google Creative Lab (CL), 
+                I explored how community members might make experimental AI applications their own. 
+            </p>
+
+            <h2>1. ImageFX Speedprompting/Speedrunning Championships</h2>
+            <figure>
+                <img src="Goods/Labs_IFSC.png" alt="An illustration of Plato's allegory of the cave next to a screenshot of an AI image synthesis interface, where a user's prompt is flagged as going against service policies.">
+                <figcaption>A sample target image by Gothika, via <a href="https://commons.wikimedia.org/wiki/File:Allegory_of_the_Cave_blank.png">Wikimedia Commons</a>, and an accompanying prompting process still.</figcaption>
+            </figure>
+            <p>
+                A competitive game where participants recreate target images with ImageFX, given a category ((art) historical, diagram/information, internet/pop culture, wildcard) and a time constraint of eight minutes.
+                The format helped us gain a sense of people’s mental models of AI image synthesis through trial and error. 
+                Initially tested with internal teammates on Discord and Google Slides, the game was later deployed at a <a href="https://x.com/GoogleLabs/status/1847026469912170964/">public event in LA</a>.
+            </p>
+            <h2>2. Desktop Interface Noodling</h2>
+            <figure>
+                <img src="Goods/Labs_Desktops.png" alt="A presentation slide that reads, 'Community Stream Theme: An Ode to Desktops'. Below the title are three images of computer desktops, varying from chaotic overwhelm of files to playful folder icons.">
+                <figcaption>Introduction to a community stream about personal computer desktop interfaces.</figcaption>
+            </figure>
+            <p>
+                A collaborative Google Slides-based workshop where community members shared their desktop setups, then reimagined them as architectural spaces using ImageFX. 
+                I modified a MusicFX track in the background live as participants explored. The workshop surfaced new opportunities for cross-tool interaction patterns.
+            </p>
+            <h2>3. Creative Coding Sketches</h2>
+            <figure>
+                <img style="width:50%;margin:0 auto 1em auto" src="Goods/Labs_Murmurations.gif" alt="Atop a grey background, a cursor places words, which flock and scatter about in a light gray expanse">
+                <figcaption>p5.js <a href="https://x.com/GoogleLabs/status/1745528048806457750">sketch</a> inspired by TextFX output.</figcaption>
+            </figure>
+            <p>Produced sketches using AI Test Kitchen tools to explore workflows incorporating synthesized media: testing how AI-generated content could integrate into creative coding practices.</p>
+            <div id="videogallery">
+                <div>
+                    <video show controls src="Goods/Labs_MeltingTime.mp4"></video> 
+                    <p class="caption">MusicFX output-inspired p5.js <a href="https://x.com/GoogleLabs/status/1752376361925185936">sketch</a>.<br>Video Description: a cursor drags an array of colors in vibrant hues across a black background; the colors shimmer and blur, reacting to audio input.</p>
+                </div>
+                <div>
+                    <video show controls src="Goods/Labs_ColorsInAFire.mp4"></video>
+                    <p class="caption">MusicFX output-inspired p5.js <a href="https://x.com/GoogleLabs/status/1747729715337580748">sketch</a>.<br>Video Description: pixels of a webcam feed pulse to the rhythm of an ambient soundscape. The color of the video shifts between pinks/reds, greens, and yellow.</p>
+                </div>
+            </div>
+            
+        </main>
+    </body>
+</html>
+
+

@@ -9,7 +9,7 @@
         <link rel="icon" type="image/x-icon" href="z-llfavi.svg">
         <script src="script.js"></script>
         <link rel="stylesheet" href="https://liuleslie.github.io/fonts.css">
-        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="commonStyles.css">
         <base target="_self">
         <style>
             main h1 { margin-bottom:2em;font-family:'FEReg' }
@@ -18,30 +18,34 @@
     <body> 
         <header>
             <section>
+                <h1><a href="index.html">Leslie Liu</a></h1>
                 <article>
-                    <h1><a href="index.html">Leslie Liu</a></h1>
-                    <p style="margin-top:0.5em">Product, interaction, and communication designer bridging data-informed insights with humanist inquiry across disciplines for generative conversation and collaboration.</p>
-                    <p>Based in EDT (UTC-4).</p>
-                    <p>MS <a href="https://www.architecture.cmu.edu/computational-design">Computational Design</a> (Carnegie Mellon ’26).</p>
-                </article>
-                <article>
-                    <h1>Contact</h1>
-                    <p><a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a></p>
-                </article>
-                <article>
-                    <h1 id="colophon">Colophon</h1>
                     <details>
-                        <summary>Author’s Note</summary>
+                        <summary>About</summary>
+                        <p style="margin-top:0.5em">Product and interaction designer exploring how tools shape — and are shaped by — the people who use them. I work with technical users navigating complex data, combining interaction design, creative coding, and critical inquiry.</p>
+                        <p>Based in EDT (UTC-4).</p>
+                        <p>MS <a href="https://www.architecture.cmu.edu/computational-design">Computational Design</a> (Carnegie Mellon ’26).</p>
+                    </details>
+                </article>
+                <article>
+                    <details>
+                        <summary>Contact</summary>
+                        <p style="margin-top:0.5em"><a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a>, <a href="https://github.com/liuleslie?tab=repositories">GitHub</a></a></p>
+                    </details>
+                </article>
+                <article>
+                    <details>
+                        <summary>Colophon</summary>
                         <p style="margin-top:0.5em">This is self-contained HTML <a href="https://gossipsweb.net">coded from scratch</a> and set in <a href="http://osp.kitchen/foundry/fluxisch-else/">Fluxisch Else</a> from Open Source Publishing, if it loads for you. Website written using Visual Studio Code, hosted on GitHub via Microsoft.</p>
                         <p>Thank you: <a href="https://solar.lowtechmagazine.com/about.html#how">Low-tech Magazine</a>, <a href="https://html.energy/">HTML Energy</a>, <a href="https://multidimensional.link/southland?">more*</a>, and <a href="https://www.are.na/leslie-liu/rockin-sites">more</a> for your influence.</p>
                     </details>
-                    <nav><a href="index.html">&lt;-- back</a></nav>
                 </article>
+                <nav><a href="index.html">&lt;&lt; index</a><br><br><span class="currPage">[X] Mars 2020 Hindsight</span><br><a href="cahill.html">[&nbsp;&nbsp;] Digital Sky Surveys</a><br><a href="labs.html">[&nbsp;&nbsp;] Google Labs</a></nav>
             </section>
         </header>
-        <main>
+        <main class="project-main">
             <h1>Mars 2020 Hindsight</h1>
-            <p class="projectmeta">Summer 2025 for NASA Jet Propulsion Laboratory. Role: Design Lead. Engineering Lead: <a href="https://lukefiorante.com/">Luke Fiorante</a>. <br>Principal Investigators: Sammi Lei, Darwin Chiu. Advisors: Krys Blackwood, Santiago Lombeyda, Hillary Mushkin, Maggie Hendrie, Scott Davidoff, and Jenny Rodenhouse.</p>
+            <p class="projectmeta">Summer 2025 for NASA Jet Propulsion Laboratory.<br>Role: Design Lead. Engineering Lead: <a href="https://lukefiorante.com/">Luke Fiorante</a>.<br>Principal Investigators: Sammi Lei, Darwin Chiu.<br>Advisors: Krys Blackwood, Santiago Lombeyda, Hillary Mushkin, Maggie Hendrie, Scott Davidoff, and Jenny Rodenhouse.</p>
             <img src="Goods/M20_Main-Playback.png" alt="A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain. In the main area to the right are an enlarged image of a map, charts, and camera imagery.">
             <p>
                 The Mars 2020 mission requires meticulous coordination and communication across engineering, science, and operations to ensure that various teams can conduct research on Mars safely and efficiently. In order to convey contextual information—whether it be environmental or rover-specific—for decision making, Rover Operators need to correlate snapshots of various data across several decoupled tools, a manually intensive process that is also incredibly reliant on personal memory. This results in significant cognitive burden, makes planning time-consuming, and presents a barrier during training of new personnel, given the reliance on unwritten, institutional knowledge.
