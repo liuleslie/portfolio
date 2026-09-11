@@ -234,7 +234,7 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
 @media (min-width: 900px) {
     body {
         /* font-size: clamp(16px, calc(1.25vw + 2px), 26px); */
-        font-size: clamp(15px, calc(1.25vw), 26px);
+        font-size: clamp(16px, calc(1.25vw), 26px);
         padding: var(--sp-2) var(--margin-d) 0;
         grid-template-columns: repeat(var(--cols-d), 1fr);
         column-gap: var(--gutter-d);
