@@ -1,81 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Digital Sky Surveys</title>
+        <title>Digital Sky Surveys — Leslie Liu</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="z-llfavi.svg">
-        <script src="script.js"></script>
-        <link rel="stylesheet" href="https://liuleslie.github.io/fonts.css">
         <link rel="stylesheet" href="commonStyles.css">
+        <script src="script.js" defer></script>
         <base target="_self">
-        <style>
-            main h1 { margin-bottom:2em;font-family:'FEReg' }
-        </style>
     </head>
-    <body> 
+    <body>
         <header>
-            <section>
-                <h1><a href="index.html">Leslie Liu</a></h1>
-                <article>
-                    <details>
-                        <summary>About</summary>
-                        <p style="margin-top:0.5em">Product and interaction designer exploring how tools shape — and are shaped by — the people who use them. I work with technical users navigating complex data, combining interaction design, creative coding, and critical inquiry.</p>
-                        <p>Based in EDT (UTC-4).</p>
-                        <p>MS <a href="https://www.architecture.cmu.edu/computational-design">Computational Design</a> (Carnegie Mellon ’26).</p>
-                    </details>
-                </article>
-                <article>
-                    <details>
-                        <summary>Contact</summary>
-                        <p style="margin-top:0.5em"><a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a>, <a href="https://github.com/liuleslie?tab=repositories">GitHub</a></a></p>
-                    </details>
-                </article>
-                <article>
-                    <details>
-                        <summary>Colophon</summary>
-                        <p style="margin-top:0.5em">This is self-contained HTML <a href="https://gossipsweb.net">coded from scratch</a> and set in <a href="http://osp.kitchen/foundry/fluxisch-else/">Fluxisch Else</a> from Open Source Publishing, if it loads for you. Website written using Visual Studio Code, hosted on GitHub via Microsoft.</p>
-                        <p>Thank you: <a href="https://solar.lowtechmagazine.com/about.html#how">Low-tech Magazine</a>, <a href="https://html.energy/">HTML Energy</a>, <a href="https://multidimensional.link/southland?">more*</a>, and <a href="https://www.are.na/leslie-liu/rockin-sites">more</a> for your influence.</p>
-                    </details>
-                </article>
-                <nav><a href="index.html">&lt;&lt; index</a><br><br><a href="mars.html">[&nbsp;&nbsp;] Mars 2020 Hindsight</a><br><span class="currPage"><a href="cahill.html">[X] Digital Sky Surveys</a></span><br><a href="labs.html">[&nbsp;&nbsp;] Google Labs</a></nav>
-            </section>
+            <div class="header-left">
+                <p class="header-name">
+                    <a href="index.html">Leslie Liu</a>
+                </p>
+                <nav class="header-links">
+                    <a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a>
+                    <a href="https://github.com/liuleslie?tab=repositories">GitHub</a>
+                    <!-- <a href="https://observablehq.com/@liuleslie">Observable</a> -->
+                </nav>
+            </div>
+            <details class="header-bio">
+                <summary>
+                    <span>Product designer interested in complex, high-stakes systems where tacit human judgment is key.</span>
+                    <span>Based in Pacific Time.</span>
+                </summary>
+                <p>I’m interested in complex, high-stakes systems where tacit human judgment is key. My background spans JPL/Caltech and Mercury, where I designed tools for/with people operating in dense, decoupled information environments. At JPL, this included rover operators correlating disconnected data sources during drive planning; at Mercury, fintech ops teams navigating fragmented internal tooling under time pressure.</p>
+                <p>Trained across visual design and interactive media, I prototype directly with end users early and often, drawing on indie web approaches to workshopping interaction patterns. At Google Labs, this meant running themed community livestreams using AI Test Kitchen tools as conversation pieces.  I’m drawn to early-stage products where I can shape both product direction and interaction design directly; the domain matters less to me than the challenge of real complexity to untangle, whether it’s an operator’s dashboard or a consumer flow with a lot riding on getting the first five seconds right.</p>
+                <p>I hold a MS in <a href="https://www.architecture.cmu.edu/computational-design">Computational Design</a> from Carnegie Mellon, where I researched <a href="https://doi.org/10.1184/R1/32581653">CAPTCHAs</a> as a crowdsourcing platform for data collection, wellspring of informal economies, and aesthetic form. Before this I spent a year researching TV dinners.</p>
+            </details>
         </header>
-        <main>
-            <h1>Digital Sky Surveys</h1>
-            <p class="projectmeta">Summer 2025 for California Institute of Technology.<br>Role: Design Lead. <br>Principal Investigators: Casey Law, Matthew Graham, & Martijn Simon Soen Liong Oei. <br>Advisors: Krys Blackwood, Santiago Lombeyda, Hillary Mushkin, Maggie Hendrie, Scott Davidoff, & Jenny Rodenhouse.</p>
-            <img src="Goods/DSS_Main.png" alt="A dark gray interface of a visualization tool that shows two rows of grayscale sky imagery. In the bottom: a list of potential objects from the imagery, a list of parameters, and a black and white chart.">
-            <p>
-                Observational astronomers and astrophysicists often work across different frequency ranges (“bands”) along the electromagnetic spectrum, specializing in certain bands and their measuring instruments. Various facilities/observatories house these instruments, releasing data at various cadences as part of various sky surveys. This data takes two forms: images of the cosmos capturing potential astronomical objects, and quantitative measurements of these potential objects that represent images abstractly. 
-            </p>
-            <p>
-                Scientists face a Big Data problem given the sheer volume of data available—across multiple frequencies, taken at different times, and measuring different properties—whose querying is fragmented and tied to positional coordinates, making it challenging to get a sense of how one is situated within the data. Image artifacts complicate this further, trickling down into catalogs and potentially biasing measurements. Data validation and verification is thus crucial so that researchers can confirm that different representations of a potential object across bands are correctly correlated for anomaly detection and hypothesis formation.
-            </p>
-            <p>
-                Collaborating with radio astronomers at Caltech, I developed a frontend UX probe based on close observation of their working methods and habits. The probe makes explicit data coverage of publicly available sky survey data over time and frequency, and incorporates a dimensionality reduction flow so that researchers can define potential objects of interest, drawing from personal expertise and intuition.
-            </p>
-            <figure>
-                <img src="Goods/DSS_SurvInfo-t.png" alt="A dark gray interface of a visualization tool with two panels of tabular data, a black and white chart, and a map of various data sources, marked out by timestamps.">
-                <figcaption>Hovering over surveys in the Public Data pane shows imagery coverage over time.</figcaption>
-            </figure>
-            <figure>
-                <img src="Goods/DSS_Coverage-t.png" alt="A dark gray interface of a visualization tool that shows three rows of grayscale sky imagery.">
-                <figcaption>The interface displays potential objects in rows of images across bands.</figcaption>
-            </figure>
-            <p>
-                As a design provocation addressing a rich and multifaceted challenge emergent in the field for some time, this project was an invaluable opportunity for me to learn how to impose design constraints and narrow scope as a complete outsider and novice. Rapid, week-long co-design sessions informed the final prototype and the earlier exploratory phase called for making a wild range of conversational artifacts, all with the goal of developing a common language to better clarify intent, shared commonalities across subdomains, and the positionality of the project as it is situated within scientists’ methodologies.
-            </p>
-            <figure>
-                <img src="Goods/DSS_Inq.png" alt="Three images: on the left, a screenshot of dark gray and blue transcription software. In the middle: various folded pieces of paper and sticky notes. On the right, a grayscale scan of sketches and notes.">
-                <figcaption style="margin-top:1em">Human-centered design methods—including contextual inquiry—helped us arrive at a shared understanding of project goals.</figcaption>
-            </figure>
-        </details>
 
+        <main class="project-main">
+            
+            <img class="project-hero" src="media/cahill-summative.png" alt="A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain. In the main area to the right are an enlarged image of a map, charts, and camera imagery.">
 
+            <h1 class="project-title">Digital Sky Surveys</h1>
+
+            <aside class="project-sidebar">
+                <p>@ Cahill Center for Astronomy and Astrophysics, Caltech</p>
+                <p>10 weeks, <br>Summer 2025</p>
+                <p>Role: design lead</p>
+                <p>Stakeholders: <br>Casey Law, <br>Matthew Graham, <br>Martijn S. Oei</p>
+                <p>Advisors: <br>Krys Blackwood, <br>Santiago Lombeyda, <br>Hillary Mushkin, <br>Maggie Hendrie, <br>Scott Davidoff</p>
+            </aside>
+
+            <div class="project-body">
+                <h2>Challenge</h2>
+                <p>
+                    Observational astronomers and astrophysicists work across different frequency ranges (“bands”) along the electromagnetic spectrum, specializing in certain bands and their measuring instruments. Various facilities/observatories house these instruments, releasing data at various cadences as part of different sky surveys. This data takes two forms: images of the cosmos capturing potential astronomical objects, and quantitative measurements of these potential objects that represent images abstractly.
+                </p>
+                <figure>                
+                    <img src="media/cahill-imagecatalog.png" alt="">
+                    <figcaption>Researchers inspect images across bands in a legacy tool and analyze their tabular counterparts in another application, a process that involves much manual copy-pasting.</figcaption>
+                </figure>
+                <p>
+                    Scientists face a Big Data problem given the sheer volume of data available—across multiple frequencies, taken at different times, and measuring different properties—whose querying is fragmented and tied to positional coordinates, making it challenging to get a sense of how one is situated within the data. Image artifacts (e.g. noise) complicate this further, trickling down into catalogs and potentially biasing measurements. Data validation and verification is thus crucial so that researchers can confirm that different representations of a potential object across bands are correctly correlated for anomaly detection and hypothesis formation.
+                </p>
+                <figure>
+                    <img src="media/cahill-bands.png" alt="">
+                    <figcaption>Images are the source of truth for astro research. Here, the same region of the cosmos across different frequencies varies in resolution and is rendered differently via false color.</figcaption>
+                </figure>
+                
+                <h2>Scope</h2>
+                <p>How to absorb enough astro terminology and gain a sense of scientists’ methodologies 
+                    within 10 weeks? I spent the first 7 in conversation with our science partners, radio astronomers at Caltech who worked across three subdomains, 
+                    to clarify shared approaches and position the project within their methodologies. 
+                    During the final 3 weeks I ran co-design sessions and iterative user-testing to validate the prototype.
+                </p>
+
+                <h2>Solution</h2>
+                <p>
+                    A frontend UX probe in Figma based on close observation of researchers’ working methods and habits. The probe makes explicit the availability and coverage of public sky survey data over time and frequency, and incorporates a dimensionality reduction flow so that researchers can define potential objects of interest, drawing from personal expertise and intuition.
+                </p>
+                
+                <figure>
+                    <img src="media/cahill-dimensionality.png" alt="">
+                    <figcaption>Work starts with a loaded catalog (stats at the bottom) and a couple sky surveys for visual reference, selected at the top based on specific frequencies. The researcher inputs a shortlist of potentially relevant parameters to map objects of interest via a dimensionality reduction algorithm.</figcaption>
+                </figure>
+                
+                <figure>
+                    <img src="media/cahill-catalogdensity.png" alt="">
+                    <figcaption>Expanding the survey data map shows image availability and capture schedules across the years. Each data release includes finer details, such as instrument sensitivity. This surface allows for high-level context that is otherwise scattered across observatory websites.</figcaption>
+                </figure>
+                <p>Influenced by the interaction affordances of Rubik’s cubes and video game navigation, the probe enables locking navigation on either time or frequency to view potential objects systematically. Each row of images correlate to an individual potential cosmic object for direct comparison. Additional features enable close-up zooming in on images.</p>
+                <figure>
+                    <img src="media/cahill-densityfreq.png" alt="">
+                    <figcaption>Data coverage over time persists in the left sidebar, where users may swap out sky survey imagery and compare different surveys directly via updated imagery.</figcaption>
+                </figure>
+
+                <h2>Impact</h2>
+                <p>Designed as a UX probe rather than a production deliverable, the prototype unites fragmented, high-dimensional survey data into a single interface via the locking affordance. Validated by our Caltech stakeholers and later presented to their broader research group, 
+                    the work opened up a follow-up conversation about future directions and opportunities for LLM integration to make researcher workflows and analysis more reproducible.
+                </p>
+            </div>
         </main>
     </body>
 </html>
-
-

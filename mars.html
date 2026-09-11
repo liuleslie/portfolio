@@ -1,75 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>M20 Hindsight</title>
+        <title>Mars 2020 Hindsight — Leslie Liu</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="z-llfavi.svg">
-        <script src="script.js"></script>
-        <link rel="stylesheet" href="https://liuleslie.github.io/fonts.css">
         <link rel="stylesheet" href="commonStyles.css">
+        <script src="script.js" defer></script>
         <base target="_self">
-        <style>
-            main h1 { margin-bottom:2em;font-family:'FEReg' }
-        </style>
     </head>
-    <body> 
+    <body>
         <header>
-            <section>
-                <h1><a href="index.html">Leslie Liu</a></h1>
-                <article>
-                    <details>
-                        <summary>About</summary>
-                        <p style="margin-top:0.5em">Product and interaction designer exploring how tools shape — and are shaped by — the people who use them. I work with technical users navigating complex data, combining interaction design, creative coding, and critical inquiry.</p>
-                        <p>Based in EDT (UTC-4).</p>
-                        <p>MS <a href="https://www.architecture.cmu.edu/computational-design">Computational Design</a> (Carnegie Mellon ’26).</p>
-                    </details>
-                </article>
-                <article>
-                    <details>
-                        <summary>Contact</summary>
-                        <p style="margin-top:0.5em"><a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a>, <a href="https://github.com/liuleslie?tab=repositories">GitHub</a></a></p>
-                    </details>
-                </article>
-                <article>
-                    <details>
-                        <summary>Colophon</summary>
-                        <p style="margin-top:0.5em">This is self-contained HTML <a href="https://gossipsweb.net">coded from scratch</a> and set in <a href="http://osp.kitchen/foundry/fluxisch-else/">Fluxisch Else</a> from Open Source Publishing, if it loads for you. Website written using Visual Studio Code, hosted on GitHub via Microsoft.</p>
-                        <p>Thank you: <a href="https://solar.lowtechmagazine.com/about.html#how">Low-tech Magazine</a>, <a href="https://html.energy/">HTML Energy</a>, <a href="https://multidimensional.link/southland?">more*</a>, and <a href="https://www.are.na/leslie-liu/rockin-sites">more</a> for your influence.</p>
-                    </details>
-                </article>
-                <nav><a href="index.html">&lt;&lt; index</a><br><br><span class="currPage">[X] Mars 2020 Hindsight</span><br><a href="cahill.html">[&nbsp;&nbsp;] Digital Sky Surveys</a><br><a href="labs.html">[&nbsp;&nbsp;] Google Labs</a></nav>
-            </section>
+            <div class="header-left">
+                <p class="header-name">
+                    <a href="index.html">Leslie Liu</a>
+                </p>
+                <nav class="header-links">
+                    <a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a>
+                    <a href="https://github.com/liuleslie?tab=repositories">GitHub</a>
+                    <!-- <a href="https://observablehq.com/@liuleslie">Observable</a> -->
+                </nav>
+            </div>
+            <details class="header-bio">
+                <summary>
+                    <span>Product designer interested in complex, high-stakes systems where tacit human judgment is key.</span>
+                    <span>Based in Pacific Time.</span>
+                </summary>
+                <p>I’m interested in complex, high-stakes systems where tacit human judgment is key. My background spans JPL/Caltech and Mercury, where I designed tools for/with people operating in dense, decoupled information environments. At JPL, this included rover operators correlating disconnected data sources during drive planning; at Mercury, fintech ops teams navigating fragmented internal tooling under time pressure.</p>
+                <p>Trained across visual design and interactive media, I prototype directly with end users early and often, drawing on indie web approaches to workshopping interaction patterns. At Google Labs, this meant running themed community livestreams using AI Test Kitchen tools as conversation pieces.  I’m drawn to early-stage products where I can shape both product direction and interaction design directly; the domain matters less to me than the challenge of real complexity to untangle, whether it’s an operator’s dashboard or a consumer flow with a lot riding on getting the first five seconds right.</p>
+                <p>I hold a MS in <a href="https://www.architecture.cmu.edu/computational-design">Computational Design</a> from Carnegie Mellon, where I researched <a href="https://doi.org/10.1184/R1/32581653">CAPTCHAs</a> as a crowdsourcing platform for data collection, wellspring of informal economies, and aesthetic form. Before this I spent a year researching TV dinners.</p>
+            </details>
         </header>
+
         <main class="project-main">
-            <h1>Mars 2020 Hindsight</h1>
-            <p class="projectmeta">Summer 2025 for NASA Jet Propulsion Laboratory.<br>Role: Design Lead. Engineering Lead: <a href="https://lukefiorante.com/">Luke Fiorante</a>.<br>Principal Investigators: Sammi Lei, Darwin Chiu.<br>Advisors: Krys Blackwood, Santiago Lombeyda, Hillary Mushkin, Maggie Hendrie, Scott Davidoff, and Jenny Rodenhouse.</p>
-            <img src="Goods/M20_Main-Playback.png" alt="A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain. In the main area to the right are an enlarged image of a map, charts, and camera imagery.">
-            <p>
-                The <a href="https://www.jpl.nasa.gov/missions/mars-2020-perseverance-rover/">Mars 2020 mission</a> requires meticulous coordination and communication across engineering, science, and operations to ensure that various teams can conduct research on Mars safely and efficiently. In order to convey contextual information—whether it be environmental or rover-specific—for decision making, Rover Operators need to correlate snapshots of various data across several decoupled tools, a manually intensive process that is also incredibly reliant on personal memory. This results in significant cognitive burden, makes planning time-consuming, and presents a barrier during training of new personnel, given the reliance on unwritten, institutional knowledge.
-            </p>
-            <figure>
-                <img src="Goods/M20_Process.png" alt="Three images of people holding sketches of a map and rover, drawn from aerial view. In the rightmost image, a person holds their sketch with their left hand, their right pointing at a computer screen showing a map with drive segments.">
-                <figcaption style="margin:1em auto 2em auto">Design probes from contextual inquiry and interviews to better gain an appreciation for how Operators relate to their tools.</figcaption>
-            </figure>
-            <p>
-                Over the course of a ten-week design sprint including five weeks of explorations and experimentation, we developed Hindsight, a tool that incorporates a search engine so that Operators can more easily surface similar past drives from the mission, whether via discrete, human-defined conditions, or algorithmically inferred based on functional similarity to a reference drive.
-            </p>
-            <figure>
-                <img src="Goods/M20_Synch-t.png" alt="A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain. In the lower right are a long list of software logs.">
-                <figcaption>The rover’s position on the orbital map, drive imagery, and flight software logs all synchronized via playhead.</figcaption>
-            </figure>
-            <p>
-                To assist in engaged data analysis, we ensured that Hindsight is flexible to support side-by-side comparisons of past drives, outfitting the frontend with a playhead such that Operators can scrub along the trajectory of a drive. The interface’s layout is customizable to suit personal preference, showing relevant data unified in the same context.
-            </p>
-            <figure>
-                <img src="Goods/M20_Comp-t.png" alt="A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain, including aerial maps, camera imagery, and charts. The interface shows two drives, compared side-by-side.">
-                <figcaption>Tiled comparison view, which would be extended across monitors in practice.</figcaption>
-            </figure>
+            
+            <img class="project-hero" src="media/hindsight-summative.png" alt="A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain. In the main area to the right are an enlarged image of a map, charts, and camera imagery.">
+
+            <h1 class="project-title">Mars 2020 Hindsight</h1>
+
+            <aside class="project-sidebar">
+                <p>@ NASA <br>Jet Propulsion Laboratory</p>
+                <p>10 weeks, <br>Summer 2025</p>
+                <p>Role: design lead</p>
+                <p>Team: <a href="https://lukefiorante.com/">Luke Fiorante</a> <br>(engineering lead)</p>
+                <p>Stakeholders: <br>Sammi Lei, <br>Darwin Chiu</p>
+                <p>Advisors: <br>Krys Blackwood, <br>Santiago Lombeyda, <br>Hillary Mushkin, <br>Maggie Hendrie, <br>Scott Davidoff</p>
+                
+            </aside>
+
+            <div class="project-body">
+                <h2>Challenge</h2>
+                <p>
+                    The <a href="https://www.jpl.nasa.gov/missions/mars-2020-perseverance-rover/">Mars 2020 mission</a> requires meticulous coordination and communication across engineering, science, and operations to ensure that various teams can conduct research on Mars safely and efficiently. In order to convey contextual information (whether environmental or rover-specific) for decision making, rover operators need to correlate snapshots of various data across several decoupled tools, a manually intensive process that is also incredibly reliant on personal memory. This results in significant cognitive burden, makes planning time-consuming, and presents a barrier during training of new personnel, given the reliance on unwritten, institutional knowledge.
+                </p>
+                <figure>
+                    <img src="media/hindsight-drivedrawing.png" alt="Three images of people holding sketches of a map and rover, drawn from aerial view. In the rightmost image, a person holds their sketch with their left hand, their right pointing at a computer screen showing a map with drive segments.">
+                    <figcaption>Asking operators to draw their most memorable drive emphasized the importance of the orbital map, to which recalled obstacles and environmental nuances are anchored.</figcaption>
+                </figure>
+
+                <h2>Scope</h2>
+                <p>
+                    End-to-end product development over the course of 10 weeks. The first 5 involved exploratory design probes, and the latter saw iterative usability testing to ensure the tool is integratable into daily operations.
+                </p>
+
+                <h2>Solution</h2>
+                <p>
+                    We developed Hindsight, a tool that incorporates a search engine for operators to more easily surface similar past drives from the mission, whether via discrete, human-defined conditions, or algorithmically inferred based on functional similarity to a reference drive.
+                </p>
+                <figure>
+                    <img src="media/hindsight-parameter.png" alt="A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain, including aerial maps, camera imagery, and charts. The interface shows two drives, compared side-by-side.">
+                    <figcaption>Operators may explicitly define search criteria based on recalled thresholds.</figcaption>
+                </figure>
+                <figure>
+                    <img src="media/hindsight-similarity.png" alt="A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain, including aerial maps, camera imagery, and charts. The interface shows two drives, compared side-by-side.">
+                    <figcaption>Conversely, operators may use a specific drive’s profile across certain telemetry channels as a template for their search. Hovering over a drive on the global (orbital) map offers a quick peek into its data.</figcaption>
+                </figure>
+                <p>
+                    To assist in engaged data analysis, we ensured that Hindsight is flexible to support side-by-side comparisons of past drives, outfitting the frontend with a playhead such that operators can scrub along the trajectory of a drive. The interface's layout is customizable to suit personal preference, showing relevant data unified in the same context and synchronized to the same timestamp.
+                </p>
+                <figure>
+                    <img src="media/hindsight-playhead.png" alt="A dark slate-blue interface of a visualization tool titled 'M2020 Hindsight' with various panels displaying segments of a drive on Martian terrain. In the lower right are a long list of software logs.">
+                    <figcaption>The rover’s position on the orbital map, drive imagery, and flight software logs all synchronized via playhead.</figcaption>
+                </figure> 
+
+                <h2>Impact</h2>
+                <p>A rover operator noted that Hindsight’s synchronized workspace enables operators to “explore the telemetry spatially, making it easier to understand how the terrain impacts the telemetry we’re observing.” Another  operator estimated time savings with Hindsight: “I was able to easily pull together different telemetry of interest that I needed to assess a drive in 2–3 minutes, as compared to [the] 15–20 minutes I would have taken [...] using existing operation tools.”</p>
+            </div>
         </main>
     </body>
 </html>
-
-
