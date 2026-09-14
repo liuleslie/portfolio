@@ -311,4 +311,5 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
 }
 @media (max-width: 900px) {
     main.project-main .project-title { font-size: 1.25em; margin-top:1em }
+    footer { margin-top: var(--sp-4) }
 }
