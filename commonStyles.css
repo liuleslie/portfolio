@@ -42,7 +42,13 @@
     --header-h: 0px;
 }
 
-html { scroll-padding-top: var(--header-h); }
+html { scroll-padding-top: var(--header-h);
+
+    /* below added due to LinkedIn in-app browser and iOS Safari discrepancies */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 
 *, *::before, *::after { box-sizing: border-box; }
 
