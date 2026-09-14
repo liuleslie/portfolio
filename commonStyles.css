@@ -3,7 +3,7 @@
 :root {
     /* Color */
     --bg: white;
-    /* --bg:       #F5F5F5; */
+    --light-bg: #f5f5f5;
     --text:     black;
     --muted:    gray;
     /* --hover-bg: #FFFFFF; */
@@ -39,7 +39,10 @@
     --gutter-d: 1.1574vw;
 
     --ease: 0.16s ease;
+    --header-h: 0px;
 }
+
+html { scroll-padding-top: var(--header-h); }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -53,13 +56,30 @@ body {
     background: var(--bg);
     color: var(--text);
     margin: 0 0 1em 0;
-    padding: var(--sp-2) var(--margin-m) 0;
+    padding: 0 var(--margin-m);
     display: grid;
     grid-template-columns: repeat(var(--cols-m), 1fr);
     column-gap: var(--gutter-m);
 }
 
-header { grid-column: 1 / -1; margin-bottom: var(--sp-3); }
+header { grid-column: 1 / -1; padding-top: var(--sp-2); margin-bottom: var(--sp-3); }
+
+header.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px var(--muted) dotted;
+}
+/* header.sticky::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    border-bottom: 1px var(--muted) dotted;
+} */
 main   { grid-column: 1 / -1; }
 footer { grid-column: 1 / -1; }
 
@@ -68,7 +88,7 @@ a {
     color: var(--muted);
     text-decoration: none;
 }
-a:hover { color: var(--text); }
+a:hover { color: var(--text); text-decoration: 1px var(--muted) solid underline }
 
 /* ── Header ─────────────────────────────── */
 .header-name {
@@ -87,24 +107,9 @@ a:hover { color: var(--text); }
 }
 .header-links a { color: inherit; }
 
+details summary:hover { background-color:var(--light-bg)}
 details.header-bio { margin: 0; overflow: hidden; }
-
-/* details.header-bio > summary > span { display: block; } */
-/* details.header-bio > summary > span + span { margin-top: var(--sp-1); } */
-
-/* details.header-bio > summary::after {
-    content: '(read more…)';
-    display: block;
-    color: var(--muted);
-    margin-top: var(--sp-1);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
-} */
-/* details[open].header-bio > summary::after { content: '(read less)'; } */
-
-details.header-bio p { margin-top: 1em; }
-details.header-bio p + p { margin-top: 1em; }
+/* details[open] { border-bottom: 1px var(--muted) dotted; } */
 
 /* ── Shared ─────────────────────────────── */
 img { display: block; width: 100%; }
@@ -143,7 +148,6 @@ main.index-main .project-title { font-size: 1.25em; }
 
 /* ── Project pages ───────────────────────── */
 .project-sidebar {
-    /* color: var(--muted); */
     margin-bottom: var(--sp-4);
 }
 .project-sidebar p { margin-top: 0; margin-bottom: 0.25em; }
@@ -175,9 +179,6 @@ figcaption {
     margin-top: var(--sp-1);
 }
 .caption { color: var(--muted); }
-
-/* labs.html: half-width gif */
-.img-half { width: 50%; margin: 0 auto var(--sp-2); }
 
 
 /* ── Grid overlay ────────────────────────── */
@@ -230,7 +231,7 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
     body {
         /* font-size: clamp(16px, calc(1.25vw + 2px), 26px); */
         font-size: clamp(16px, calc(1.25vw), 26px);
-        padding: var(--sp-2) var(--margin-d) 0;
+        padding: 0 var(--margin-d);
         grid-template-columns: repeat(var(--cols-d), 1fr);
         column-gap: var(--gutter-d);
     }
@@ -308,8 +309,7 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
     /* Without this, the <p> is itself a grid item of #various-intro's subgrid and defaults to spanning just 1 of its 5 columns */
     footer { grid-column: 1 / 6; margin-bottom: var(--sp-4) }
 
-    #various-intro > p { grid-column: 1 / -1; }
-    footer > p { grid-column: 3 / -1; }
+    #various-intro > *, footer > * { grid-column: 1 / -1; }
 }
 @media (max-width: 900px) {
     main.project-main .project-title { font-size: 1.25em; margin-top:1em }

@@ -1,3 +1,16 @@
+// Sticky header: keep scroll-padding-top in sync with its live height so
+// keyboard focus and anchor jumps aren't scrolled to a spot hidden behind it
+(function () {
+    const header = document.querySelector('header.sticky');
+    if (!header) return;
+
+    const root = document.documentElement;
+    const update = () => root.style.setProperty('--header-h', header.offsetHeight + 'px');
+
+    update();
+    new ResizeObserver(update).observe(header);
+}());
+
 // Dev controls — grid overlay (G) and layout inspector (L)
 (function () {
     const COLS = 11;
