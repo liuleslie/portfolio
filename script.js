@@ -5,10 +5,12 @@
     if (!header) return;
 
     const root = document.documentElement;
-    const update = () => root.style.setProperty('--header-h', header.offsetHeight + 'px');
+    const isSticky = () => getComputedStyle(header).position === 'sticky';
+    const update = () => root.style.setProperty('--header-h', isSticky() ? header.offsetHeight + 'px' : '0px');
 
     update();
     new ResizeObserver(update).observe(header);
+    window.addEventListener('resize', update);
 }());
 
 // Dev controls — grid overlay (G) and layout inspector (L)

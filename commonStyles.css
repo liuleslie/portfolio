@@ -64,22 +64,6 @@ body {
 
 header { grid-column: 1 / -1; padding-top: var(--sp-2); margin-bottom: var(--sp-3); }
 
-header.sticky {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: var(--bg);
-    border-bottom: 1px var(--muted) dotted;
-}
-/* header.sticky::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    width: 100vw;
-    transform: translateX(-50%);
-    border-bottom: 1px var(--muted) dotted;
-} */
 main   { grid-column: 1 / -1; }
 footer { grid-column: 1 / -1; }
 
@@ -237,6 +221,14 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
     }
 
     header { margin-bottom: var(--sp-5); }
+
+    header.sticky {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--bg);
+        border-bottom: 1px var(--muted) dotted;
+    }
 
     #grid-overlay {
         padding: 0 var(--margin-d);
