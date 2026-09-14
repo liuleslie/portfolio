@@ -106,8 +106,8 @@ a:hover { color: var(--text); text-decoration: 1px var(--muted) solid underline 
     margin-bottom: var(--sp-2);
 }
 .header-links a { color: inherit; }
-
-details summary:hover { background-color:var(--light-bg)}
+details summary { transition: 0.1s; }
+details summary:hover { background-color:var(--light-bg);transition:0.2s;}
 details.header-bio { margin: 0; overflow: hidden; }
 /* details[open] { border-bottom: 1px var(--muted) dotted; } */
 
