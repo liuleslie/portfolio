@@ -45,8 +45,8 @@
 html { scroll-padding-top: var(--header-h);
 
     /* below added due to LinkedIn in-app browser and iOS Safari discrepancies */
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
+    /* -webkit-text-size-adjust: 100%; */
+    /* text-size-adjust: 100%; */
 }
 
 
