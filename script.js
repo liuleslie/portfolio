@@ -1,33 +1,3 @@
-// Animated details toggle for .header-bio
-(function () {
-    document.querySelectorAll('details.header-bio').forEach(function (el) {
-        var summary = el.querySelector('summary');
-        var anim = null;
-
-        summary.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            if (anim) { anim.cancel(); }
-
-            if (!el.open) {
-                el.setAttribute('open', '');
-                var full = el.scrollHeight + 'px';
-                anim = el.animate(
-                    [{ height: summary.offsetHeight + 'px' }, { height: full }],
-                    { duration: 380, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', fill: 'none' }
-                );
-            } else {
-                var from = el.scrollHeight + 'px';
-                anim = el.animate(
-                    [{ height: from }, { height: summary.offsetHeight + 'px' }],
-                    { duration: 320, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', fill: 'none' }
-                );
-                anim.onfinish = function () { el.removeAttribute('open'); };
-            }
-        });
-    });
-}());
-
 // Dev controls — grid overlay (G) and layout inspector (L)
 (function () {
     const COLS = 11;
