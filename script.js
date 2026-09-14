@@ -54,9 +54,15 @@
     layoutBtn.addEventListener('click', toggleLayout);
 
     document.addEventListener('keydown', function (e) {
-        if (e.metaKey || e.ctrlKey || e.altKey) return;
-        if (e.key === 'g' || e.key === 'G') toggleGrid();
-        if (e.key === 'l' || e.key === 'L') toggleLayout();
+        // Require Alt/Option so this can't collide with screen-reader quick-nav
+        // letters (g/l are reserved for graphic/list nav in NVDA & JAWS) or with
+        // ordinary typing. Match on e.code, not e.key: on Mac, Option+G reports
+        // e.key as "©" (the character it produces), not "g".
+        if (!e.altKey || e.metaKey || e.ctrlKey || e.shiftKey) return;
+        const target = e.target;
+        if (target && (target.isContentEditable || /^(input|textarea|select)$/i.test(target.tagName))) return;
+        if (e.code === 'KeyG') { e.preventDefault(); toggleGrid(); }
+        else if (e.code === 'KeyL') { e.preventDefault(); toggleLayout(); }
     });
 
     controls.appendChild(gridBtn);

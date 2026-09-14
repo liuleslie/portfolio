@@ -96,6 +96,7 @@ a:hover { color: var(--text); text-decoration: 1px var(--muted) solid underline 
     margin-bottom: var(--sp-2);
 }
 .header-links a { color: inherit; }
+details:hover { cursor: pointer }
 details summary { transition: 0.1s; }
 details summary:hover { background-color:var(--light-bg);transition:0.2s;}
 details.header-bio { margin: 0; overflow: hidden; }
@@ -303,13 +304,18 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
         grid-template-columns: subgrid;
     }
     
-    #various-intro { grid-column: 5 / -3; }
+    #various-intro { grid-column: 5 / -3; margin-bottom:var(--sp-5) }
     /* Without this, the <p> is itself a grid item of #various-intro's subgrid and defaults to spanning just 1 of its 5 columns */
-    footer { grid-column: 1 / 6; margin-bottom: var(--sp-4) }
+    footer { grid-column: 1 / 6; margin-top: var(--sp-4); margin-bottom: var(--sp-4) }
 
     #various-intro > *, footer > * { grid-column: 1 / -1; }
 }
 @media (max-width: 900px) {
     main.project-main .project-title { font-size: 1.25em; margin-top:1em }
-    footer { margin-top: var(--sp-4) }
+    .project-entry + .project-entry {
+        margin-top:var(--sp-5);
+    }
+    .project-sidebar {
+        margin-bottom:var(--sp-3);
+    }
 }
