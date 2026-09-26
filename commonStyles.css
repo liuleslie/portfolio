@@ -228,6 +228,7 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
     }
 
     header { margin-bottom: var(--sp-5); }
+    body:has(main.project-main) header { margin-bottom: 0; }
 
     header.sticky {
         position: sticky;
