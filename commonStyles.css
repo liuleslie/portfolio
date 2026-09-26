@@ -154,7 +154,7 @@ main.project-main .project-title {
 }
 .project-body h2 {
     font-size:1em;
-    font-weight: var(--weight-bold);
+    font-weight: var(--weight-body);
     margin-top: 0;
     margin-bottom: var(--sp-1);
 }
