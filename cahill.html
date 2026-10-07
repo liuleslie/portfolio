@@ -20,12 +20,12 @@
 
         <main class="project-main">
             
-            <img class="project-hero" src="media/cahill-summative.webp" alt="A dark gray interface of a visualization tool showing two rows of grayscale sky imagery. At the bottom: a list of potential objects from the imagery, a list of parameters, and a black and white chart.">
+            <img class="project-hero" src="media/cahill-summative-gr.webp" alt="A dark gray interface of a visualization tool showing two rows of grayscale sky imagery. At the bottom: a list of potential objects from the imagery, a list of parameters, and a black and white chart.">
 
             <h1 class="project-title">Digital Sky Surveys</h1>
 
             <aside class="project-sidebar">
-                <p>@ Cahill Center for Astronomy and Astrophysics, Caltech</p>
+                <p>@ Cahill Center for Astronomy <br>and Astrophysics, Caltech</p>
                 <p>10 weeks, <br>Summer 2025</p>
                 <p>Role: design lead</p>
                 <p>Stakeholders: <br>Casey Law, <br>Matthew Graham, <br>Martijn S. Oei</p>
@@ -33,15 +33,17 @@
             </aside>
 
             <div class="project-body">
+                <!-- Suggested replacement for the original Challenge paragraphs below. -->
+                <p>[Astronomers compare candidate objects across survey images and their measurements. Today, image inspection and catalog analysis can happen in separate tools, requiring manual copying between them. This ten-week research prototype explored a shared workspace for that investigation.]</p>
                 <h2>Challenge</h2>
-                <p>
+                <p class="replace-target">
                     Observational astronomers and astrophysicists work across different frequency ranges (“bands”) along the electromagnetic spectrum, specializing in certain bands and their measuring instruments. Various facilities/observatories house these instruments, releasing data at various cadences as part of different sky surveys. This data takes two forms: images of the cosmos capturing potential astronomical objects, and quantitative measurements of these potential objects that represent images abstractly.
                 </p>
                 <figure>                
                     <img src="media/cahill-imagecatalog.webp" alt="Two screenshots of astronomy research tools. The first in the upper left shows a 2 by 2 grid of sky imagery. The second in the lower right shows a long table of statistics and measurements.">
                     <figcaption>Researchers inspect images across bands in a legacy tool and analyze their tabular counterparts in another application, a process that involves much manual copy-pasting.</figcaption>
                 </figure>
-                <p>
+                <p class="replace-target">
                     Scientists face a Big Data problem given the sheer volume of data available—across multiple frequencies, taken at different times, and measuring different properties—whose querying is fragmented and tied to positional coordinates, making it challenging to get a sense of how one is situated within the data. Image artifacts (e.g. noise) complicate this further, trickling down into catalogs and potentially biasing measurements. Data validation and verification is thus crucial so that researchers can confirm that different representations of a potential object across bands are correctly correlated for anomaly detection and hypothesis formation.
                 </p>
                 <figure>
@@ -57,27 +59,36 @@
                 </p>
 
                 <h2>Solution</h2>
+                <h2>[From expert workflow to interface]</h2>
+                <p>[“Image artifacts can affect catalog measurements.”<br>→ Operationally: researchers need to verify a candidate against its source imagery.<br>→ Design requirement: keep image evidence and its catalog measurements in the same investigation context.<br>→ Interface response: image and catalog views appear together in the prototype.]</p>
+                <p>[“The same sky region is observed at different frequencies and times.”<br>→ Operationally: a candidate can look different across surveys and releases.<br>→ Design requirement: make survey coverage and frequency context visible during comparison.<br>→ Interface response: the prototype maps survey availability over time and frequency.]</p>
+                <p>[“Researchers select parameters from personal expertise and intuition.”<br>→ Operationally: the useful measurements depend on the question being explored.<br>→ Design requirement: let researchers choose a shortlist of parameters for visualization.<br>→ Interface response: researchers select parameters before mapping candidate objects.]</p>
                 <p>
                     A frontend UX probe in Figma based on close observation of researchers’ working methods and habits. The probe makes explicit the availability and coverage of public sky survey data over time and frequency, and incorporates a dimensionality reduction flow so that researchers can define potential objects of interest, drawing from personal expertise and intuition.
                 </p>
                 
                 <figure>
-                    <img src="media/cahill-dimensionality.webp" alt="An application interface in dark mode with white text. There are three panels side by side at the bottom, the middle panel full of items that have been selected for mapping and visualization. Selected items are highlighted in pink.">
+                    <img src="media/cahill-dimensionality-gr.webp" alt="An application interface in dark mode with white text. There are three panels side by side at the bottom, the middle panel full of items that have been selected for mapping and visualization. Selected items are highlighted in pink.">
                     <figcaption>Work starts with a loaded catalog (stats at the bottom) and a couple sky surveys for visual reference, selected at the top based on specific frequencies. The researcher inputs a shortlist of potentially relevant parameters to map objects of interest via a dimensionality reduction algorithm.</figcaption>
                 </figure>
                 
                 <figure>
-                    <img src="media/cahill-catalogdensity.webp" alt="A dark mode user interface screenshot. The screen is vertically segmented in three sections, the top expanded to show datasets released over the years, each represented as a thin rectangle. A hovered over dataset shows additional info in a pink panel.">
+                    <img src="media/cahill-catalogdensity-gr.webp" alt="A dark mode user interface screenshot. The screen is vertically segmented in three sections, the top expanded to show datasets released over the years, each represented as a thin rectangle. A hovered over dataset shows additional info in a pink panel.">
                     <figcaption>Expanding the survey data map shows image availability and capture schedules across the years. Each data release includes finer details, such as instrument sensitivity. This surface allows for high-level context that is otherwise scattered across observatory websites.</figcaption>
                 </figure>
                 <p>Influenced by the interaction affordances of Rubik’s cubes and video game navigation, the probe enables locking navigation on either time or frequency to view potential objects systematically. Each row of images correlates to an individual potential cosmic object for direct comparison. Additional features enable close-up zooming in on images.</p>
                 <figure>
-                    <img src="media/cahill-densityfreq.webp" alt="A dark mode user interface: a horizontal panel at the top shows selected datasets highlighted in pink; to the left is a vertical panel that shows the focused dataset’s availability over time as short horizontal lines. The main panel displays rows of cosmic objects as captured across electromagnetic wavelengths.">
+                    <img src="media/cahill-densityfreq-gr.webp" alt="A dark mode user interface: a horizontal panel at the top shows selected datasets highlighted in pink; to the left is a vertical panel that shows the focused dataset’s availability over time as short horizontal lines. The main panel displays rows of cosmic objects as captured across electromagnetic wavelengths.">
                     <figcaption>Data coverage over time persists in the left sidebar, where users may swap out sky survey imagery and compare different surveys directly via updated imagery.</figcaption>
                 </figure>
 
-                <h2>Impact</h2>
-                <p>Designed as a UX probe rather than a production deliverable, the prototype unites fragmented, high-dimensional survey data into a single interface via the locking affordance. Validated by our Caltech stakeholders and later presented to their broader research group, 
+                <!-- Suggested replacement for the existing Impact paragraph and heading below. -->
+                <h2>[What the probe established]</h2>
+                <p>[The prototype and stakeholder sessions explored a shared interface for comparing survey images, catalog measurements, and data coverage. It was presented to the broader research group and prompted discussion of possible next directions.]</p>
+                <h2>[What remained unresolved]</h2>
+                <p>[This was a Figma research probe, not a production implementation. It did not establish the prototype’s effect on research outcomes or long-term workflow efficiency. A next iteration could investigate how researchers use these linked views during a specific analysis task.]</p>
+                <h2 class="replace-target">Impact</h2>
+                <p class="replace-target">Designed as a UX probe rather than a production deliverable, the prototype unites fragmented, high-dimensional survey data into a single interface via the locking affordance. Validated by our Caltech stakeholders and later presented to their broader research group,
                     the work opened up a follow-up conversation about future directions and opportunities for LLM integration to make researcher workflows and analysis more reproducible.
                 </p>
             </div>

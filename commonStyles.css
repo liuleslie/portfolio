@@ -103,7 +103,9 @@ details.header-bio { margin: 0; overflow: hidden; }
 /* details[open] { border-bottom: 1px var(--muted) dotted; } */
 
 /* ── Shared ─────────────────────────────── */
-img { display: block; width: 100%; }
+img { display: block; width: 100%; 
+    border-radius:0.33em 
+}
 
 /* ── Index: project cards ────────────────── */
 main section { margin-bottom: var(--sp-3); }
@@ -170,6 +172,34 @@ figcaption {
     margin-top: var(--sp-1);
 }
 .caption { color: var(--muted); }
+.replace-target { color: #c00; }
+
+.abstract-hero {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-height: 20rem;
+    padding: clamp(1.5rem, 5vw, 5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--sp-3);
+    background: var(--light-bg);
+}
+.abstract-card {
+    min-height: 18rem;
+    padding: clamp(1rem, 3vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--sp-2);
+    background: var(--light-bg);
+}
+.abstract-card p { margin: 0; color: var(--muted); }
+.abstract-flow { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-2); }
+.abstract-flow span { flex: 1; padding: var(--sp-2); border: 1px solid #aaa; text-align: center; }
+.abstract-flow b { color: var(--muted); font-weight: var(--weight-body); }
+.abstract-hero p, .editorial-note { color: var(--muted); margin: 0; }
+.abstract-steps { grid-column: 4 / -1; margin: var(--sp-2) 0; }
 
 
 /* ── Grid overlay ────────────────────────── */
@@ -287,9 +317,14 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
         margin-bottom:var(--sp-5);
     }
 
-    .project-hero     { grid-column: 1 / -1; grid-row: 1; }
+    .project-body > p.blurb { grid-column: 2 / 7; margin-bottom: var(--sp-5) }
+
+    .project-hero     { grid-column: 1 / -1; grid-row: 1; 
+        border-radius: 0 0 0.33em 0.33em
+    }
+    .abstract-hero { grid-column: 1 / -1; grid-row: 1; }
     /* Matches both a bare title (single-project pages) and one nested in .project-entry (multi-project pages) */
-    main.project-main > .project-title, .project-entry > .project-title { grid-column: 5 / -1; grid-row: 2; margin-top: var(--sp-3); }
+    main.project-main > .project-title, .project-entry > .project-title { grid-column: 4 / -1; grid-row: 2; margin-top: var(--sp-3); }
     .project-sidebar  { grid-column: 1 / 4; grid-row: 3; align-self: start; }
     .project-sidebar br { display: inline; }
     .project-sidebar > p:first-child { margin-top: 0; }
@@ -319,4 +354,6 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
     .project-sidebar {
         margin-bottom:var(--sp-3);
     }
+    .abstract-flow { flex-direction: column; }
+    .abstract-flow b { transform: rotate(90deg); }
 }
