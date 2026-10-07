@@ -13,6 +13,39 @@
     window.addEventListener('resize', update);
 }());
 
+// Small image galleries used in project case studies
+(function () {
+    document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
+        const image = gallery.querySelector('.gallery-image');
+        const caption = gallery.querySelector('.gallery-caption');
+        const count = gallery.querySelector('.gallery-count');
+        const slidesData = gallery.querySelector('.gallery-slides');
+        const previous = gallery.querySelector('.gallery-prev');
+        const next = gallery.querySelector('.gallery-next');
+        if (!image || !caption || !count || !slidesData || !previous || !next) return;
+
+        let slides;
+        try { slides = JSON.parse(slidesData.textContent); }
+        catch (error) { return; }
+        if (!Array.isArray(slides) || slides.length < 2) return;
+
+        let activeIndex = 0;
+        function showSlide(index) {
+            activeIndex = (index + slides.length) % slides.length;
+            const slide = slides[activeIndex];
+            image.src = slide.src;
+            image.alt = slide.alt;
+            caption.textContent = slide.caption;
+            count.textContent = (activeIndex + 1) + ' of ' + slides.length;
+        }
+
+        previous.addEventListener('click', function () { showSlide(activeIndex - 1); });
+        next.addEventListener('click', function () { showSlide(activeIndex + 1); });
+        gallery.classList.add('gallery-ready');
+        showSlide(0);
+    });
+}());
+
 // Dev controls — grid overlay (G) and layout inspector (L)
 (function () {
     const COLS = 11;

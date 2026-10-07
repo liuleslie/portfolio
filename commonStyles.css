@@ -6,6 +6,10 @@
     --light-bg: #f5f5f5;
     --text:     black;
     --muted:    gray;
+    --light:    #cdcdcd;
+    --lighter:  #dedede;
+    --lightest2: #f1f1f1;
+    --lightest:  #f5f5f5;
     /* --hover-bg: #FFFFFF; */
 
     /* Space
@@ -61,7 +65,7 @@ body {
     letter-spacing: var(--tracking);
     background: var(--bg);
     color: var(--text);
-    margin: 0 0 1em 0;
+    margin: 0 0 2em 0;
     padding: 0 var(--margin-m);
     display: grid;
     grid-template-columns: repeat(var(--cols-m), 1fr);
@@ -82,20 +86,20 @@ a:hover { color: var(--text); text-decoration: 1px var(--muted) solid underline 
 
 /* ── Header ─────────────────────────────── */
 .header-name {
-    font-size:1.25em;
+    font-size:1em;
     font-weight: var(--weight-body);
-    margin-top: 0;
-    margin-bottom: var(--sp-1);
+    /* margin-top: 0; */
+    margin-bottom: 1em;
 }
 .header-name a { color: var(--text); }
 
 .header-links {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 0.25em;
     margin-bottom: var(--sp-2);
 }
-.header-links a { color: inherit; }
+
 details:hover { cursor: pointer }
 details summary { transition: 0.1s; }
 details summary:hover { background-color:var(--light-bg);transition:0.2s;}
@@ -164,13 +168,40 @@ main.project-main .project-title {
 .project-body > p:first-child { margin-top: 0; }
 .project-body h2 + p { margin-top: 0; }
 .project-body h2:not(:first-of-type) + p { margin-top: var(--sp-2); }
-.project-body p { margin-bottom: 1em; }
+.project-body p { margin-bottom: 0em; }
 
-figure { margin: var(--sp-2) 0 var(--sp-2); }
+
+figure { margin: var(--sp-3) 0 var(--sp-2); }
 figcaption {
     color: var(--muted);
     margin-top: var(--sp-1);
 }
+.gallery-controls {
+    display: none;
+    align-items: center;
+    gap: var(--sp-1);
+    margin-top: 0;
+}
+.image-gallery.gallery-ready { display: grid; grid-template-columns: auto 1fr; align-items: start; column-gap: var(--sp-2); }
+.image-gallery > .gallery-image { grid-column: 1 / -1; }
+.image-gallery > .gallery-caption { grid-column: 2; margin-top: 0; }
+.image-gallery > .gallery-controls { grid-column: 1; grid-row: 2; }
+.gallery-ready .gallery-controls { display: flex; }
+.image-gallery > .gallery-caption, .image-gallery > .gallery-controls { margin-top:0.5em }
+.gallery-controls button {
+    appearance: none;
+    border: 1px solid var(--lighter);
+    border-radius: 0.25em;
+    background: var(--lightest);
+    color: var(--text);
+    font: inherit;
+    line-height: 1;
+    padding: 0.35em 0.6em;
+    cursor: pointer;
+}
+.gallery-controls button:hover { background: var(--lightest2); }
+.gallery-controls button:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.gallery-count { color: var(--muted); font-variant-numeric: tabular-nums; }
 .caption { color: var(--muted); }
 .replace-target { color: #c00; }
 
@@ -317,7 +348,7 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
         margin-bottom:var(--sp-5);
     }
 
-    .project-body > p.blurb { grid-column: 2 / 7; margin-bottom: var(--sp-5) }
+    .project-body > p.blurb { grid-column: 1 / 6; margin-bottom: var(--sp-5) }
 
     .project-hero     { grid-column: 1 / -1; grid-row: 1; 
         border-radius: 0 0 0.33em 0.33em
@@ -331,8 +362,11 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
     .project-sidebar p { margin-top: 1em; margin-bottom: 1em; }
     .project-body     { grid-column: 4 / -1; grid-row: 3; align-self: start; display: grid; grid-template-columns: subgrid; align-content: start; }
     .project-body > p { grid-column: 4 / -1; }
-    .project-body > h2 { grid-column: 2 / 4; }
+    .project-body > h2 { grid-column: 1 / 3; }
     .project-body > figure { grid-column: 1 / -1; }
+    .image-gallery.gallery-ready { grid-template-columns: subgrid; column-gap: var(--gutter-d); }
+    .image-gallery > .gallery-controls { grid-column: 1 / 3; }
+    .image-gallery > .gallery-caption { grid-column: 4 / -1; }
 
     /* #various-intro is a direct child of main.project-main (sibling of .project-entry), so it's scoped here, not under .project-body */
     #various-intro, footer {
