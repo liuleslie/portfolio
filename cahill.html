@@ -12,9 +12,12 @@
         <base target="_self">
     </head>
     <body>
-        <header class="sticky">
+        <header class="sticky project-nav">
             <div class="header-left">
-                <p class="header-name"><a href="index.html">← Back</a></p>
+                <p class="header-name"><a href="index.html">← Back to Index</a></p>
+            </div>
+            <div class="header-right">
+                <p class="header-name"><a href="mercury.html">Next Case Study →</a></p>
             </div>
         </header>
 
@@ -33,30 +36,68 @@
             </aside>
 
             <div class="project-body">
-                <!-- Suggested replacement for the original Challenge paragraphs below. -->
-                <p>[Astronomers compare candidate objects across survey images and their measurements. Today, image inspection and catalog analysis can happen in separate tools, requiring manual copying between them. This ten-week research prototype explored a shared workspace for that investigation.]</p>
+                <p class="blurb">A research prototype developed with Caltech astronomers, exploring how to navigate image and tabular data in a shared workspace.</p>
+
+                
                 <h2>Challenge</h2>
-                <p class="replace-target">
-                    Observational astronomers and astrophysicists work across different frequency ranges (“bands”) along the electromagnetic spectrum, specializing in certain bands and their measuring instruments. Various facilities/observatories house these instruments, releasing data at various cadences as part of different sky surveys. This data takes two forms: images of the cosmos capturing potential astronomical objects, and quantitative measurements of these potential objects that represent images abstractly.
+                <p>
+                    Astronomers and astrophysicists compare candidate objects using images from sky surveys and derived tabular measurements. Today, image inspection and quantitative data analysis work happens in separate tools, requiring manual copy-pasting position coordinates to retrieve imagery. This ten-week research prototype explored a shared workspace to close the gap.
                 </p>
+
                 <figure>                
                     <img src="media/cahill-imagecatalog.webp" alt="Two screenshots of astronomy research tools. The first in the upper left shows a 2 by 2 grid of sky imagery. The second in the lower right shows a long table of statistics and measurements.">
-                    <figcaption>Researchers inspect images across bands in a legacy tool and analyze their tabular counterparts in another application, a process that involves much manual copy-pasting.</figcaption>
+                    <figcaption>Manual lookup of imagery via coordinates from tabular data.</figcaption>
                 </figure>
-                <p class="replace-target">
-                    Scientists face a Big Data problem given the sheer volume of data available—across multiple frequencies, taken at different times, and measuring different properties—whose querying is fragmented and tied to positional coordinates, making it challenging to get a sense of how one is situated within the data. Image artifacts (e.g. noise) complicate this further, trickling down into catalogs and potentially biasing measurements. Data validation and verification is thus crucial so that researchers can confirm that different representations of a potential object across bands are correctly correlated for anomaly detection and hypothesis formation.
-                </p>
+                
+
+                <h2>Scope</h2>
+                <p>How to absorb enough astrophysics terminology and gain a sense of scientists’ methodologies within ten weeks? I spent the first seven weeks in conversation with our science partners, radio astronomers at Caltech who worked across three subdomains, to clarify shared approaches and position the project within their methodologies. During the final three weeks I ran co-design sessions and iterative user-testing to validate the prototype.</p>
+
+                <h2>Discovery</h2>
+                <p>a bit on sci comm</p>
+
+                <figure>
+                    <img src="media/cahill-problemdef.webp" alt="">
+                    <figcaption>x</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="media/cahill-workflow.webp" alt="">
+                    <figcaption>x</figcaption>
+                </figure>
+
+
+                <figure>
+                    <img src="media/cahill-rubiks.webp" alt="">
+                    <figcaption>x</figcaption>
+                </figure>
+<!--                 
                 <figure>
                     <img src="media/cahill-bands.webp" alt="Six crops of the same region of the cosmos and objects across different frequencies, arranged in a grid. The images range in color, some in warm reds and oranges, others in cool blue and black. They also range in resolution: objects’ shapes change across frequencies.">
                     <figcaption>Images are the source of truth for astro research. Here, the same region of the cosmos across different frequencies varies in resolution and is rendered differently via false color.</figcaption>
                 </figure>
+                 -->
+
+
+                 <!-- storytelling
+                  
+                 
+What is the right problem/model to investigate? Ambiguous research space → stakeholder needs → exploratory prototype → learning.
+
+What did the probe establish?
+Which hypothesis survived?
+What did astronomers react to?
+What was wrong?
+What would the next prototype investigate?
+The current ending says the prototype “prompted high-dimensional survey data into a single interface” and helped identify future directions. That's too broad. The reader needs 2–3 concrete conclusions.
+^ what did I prove through this prototype?
+
+
+                 
+                 
+                 -->
                 
-                <h2>Scope</h2>
-                <p>How to absorb enough astro terminology and gain a sense of scientists’ methodologies 
-                    within 10 weeks? I spent the first 7 in conversation with our science partners, radio astronomers at Caltech who worked across three subdomains, 
-                    to clarify shared approaches and position the project within their methodologies. 
-                    During the final 3 weeks I ran co-design sessions and iterative user-testing to validate the prototype.
-                </p>
+
 
                 <h2>Solution</h2>
                 <h2>[From expert workflow to interface]</h2>
