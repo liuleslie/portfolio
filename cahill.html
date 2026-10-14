@@ -1,3 +1,24 @@
+<!-- STORYTELLING
+What is the right problem/model to investigate? Ambiguous research space → stakeholder needs → exploratory prototype → learning.
+
+What did the probe establish?
+Which hypothesis survived?
+What did astronomers react to?
+What was wrong?
+What would the next prototype investigate?
+The current ending says the prototype “prompted high-dimensional survey data into a single interface” and helped identify future directions. That's too broad. The reader needs 2–3 concrete conclusions.
+^ what did I prove through this prototype?
+
+
+MISSING
+Deliberate hierarchy and information-density decisions.
+Constraints inherited from existing scientific applications.
+Patterns discovered through researcher observation.
+Visual exploration or aesthetic preference. 
+-->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,7 +38,7 @@
                 <p class="header-name"><a href="index.html">← Back to Index</a></p>
             </div>
             <div class="header-right">
-                <p class="header-name"><a href="mercury.html">Next Case Study →</a></p>
+                <p class="header-name"><a href="hindsight.html">Next Case Study →</a></p>
             </div>
         </header>
 
@@ -31,7 +52,7 @@
                 <p>@ Cahill Center for Astronomy <br>and Astrophysics, Caltech</p>
                 <p>10 weeks, <br>Summer 2025</p>
                 <p>Role: design lead</p>
-                <p>Stakeholders: <br>Casey Law, <br>Matthew Graham, <br>Martijn S. Oei</p>
+                <p>Science Partners: <br>Casey Law, <br>Matthew Graham, <br>Martijn S. Oei</p>
                 <p>Advisors: <br>Krys Blackwood, <br>Santiago Lombeyda, <br>Hillary Mushkin, <br>Maggie Hendrie, <br>Scott Davidoff</p>
             </aside>
 
@@ -41,97 +62,111 @@
                 
                 <h2>Challenge</h2>
                 <p>
-                    Astronomers and astrophysicists compare candidate objects using images from sky surveys and derived tabular measurements. Today, image inspection and quantitative data analysis work happens in separate tools, requiring manual copy-pasting position coordinates to retrieve imagery. This ten-week research prototype explored a shared workspace to close the gap.
+                    Astronomers and astrophysicists compare candidate objects using images from sky surveys and derived tabular measurements (referred to as “catalogs”). Today, image inspection and quantitative data analysis happen in separate tools, requiring researchers to copy and paste coordinates manually to retrieve imagery. This research prototype explored a shared workspace to close the gap.
                 </p>
 
                 <figure>                
                     <img src="media/cahill-imagecatalog.webp" alt="Two screenshots of astronomy research tools. The first in the upper left shows a 2 by 2 grid of sky imagery. The second in the lower right shows a long table of statistics and measurements.">
-                    <figcaption>Manual lookup of imagery via coordinates from tabular data.</figcaption>
+                    <figcaption>Manual lookup of imagery via coordinates from a catalog. Each row in the table browser contains measurements of a candidate object.</figcaption>
                 </figure>
-                
-
-                <h2>Scope</h2>
-                <p>How to absorb enough astrophysics terminology and gain a sense of scientists’ methodologies within ten weeks? I spent the first seven weeks in conversation with our science partners, radio astronomers at Caltech who worked across three subdomains, to clarify shared approaches and position the project within their methodologies. During the final three weeks I ran co-design sessions and iterative user-testing to validate the prototype.</p>
-
-                <h2>Discovery</h2>
-                <p>a bit on sci comm</p>
-
-                <figure>
-                    <img src="media/cahill-problemdef.webp" alt="">
-                    <figcaption>x</figcaption>
-                </figure>
-
-                <figure>
-                    <img src="media/cahill-workflow.webp" alt="">
-                    <figcaption>x</figcaption>
-                </figure>
-
-
-                <figure>
-                    <img src="media/cahill-rubiks.webp" alt="">
-                    <figcaption>x</figcaption>
-                </figure>
-<!--                 
                 <figure>
                     <img src="media/cahill-bands.webp" alt="Six crops of the same region of the cosmos and objects across different frequencies, arranged in a grid. The images range in color, some in warm reds and oranges, others in cool blue and black. They also range in resolution: objects’ shapes change across frequencies.">
-                    <figcaption>Images are the source of truth for astro research. Here, the same region of the cosmos across different frequencies varies in resolution and is rendered differently via false color.</figcaption>
+                    <figcaption>Observations of the same region of sky vary across surveys in frequency, temporal coverage, resolution, and image quality—complicating the comparison of imagery and associated catalog data.</figcaption>
                 </figure>
-                 -->
 
 
-                 <!-- storytelling
-                  
-                 
-What is the right problem/model to investigate? Ambiguous research space → stakeholder needs → exploratory prototype → learning.
+                <h2>Scope</h2>
+                <p>Over ten weeks, I worked with three Caltech radio astronomers, each specializing in a different subdomain and bringing their own research practices. I spent the first seven weeks defining the problem and, during the final three, ran co-design sessions and iterative user testing to validate the prototype.</p>
 
-What did the probe establish?
-Which hypothesis survived?
-What did astronomers react to?
-What was wrong?
-What would the next prototype investigate?
-The current ending says the prototype “prompted high-dimensional survey data into a single interface” and helped identify future directions. That's too broad. The reader needs 2–3 concrete conclusions.
-^ what did I prove through this prototype?
-
-
-                 
-                 
-                 -->
-                
-
-
-                <h2>Solution</h2>
-                <h2>[From expert workflow to interface]</h2>
-                <p>[“Image artifacts can affect catalog measurements.”<br>→ Operationally: researchers need to verify a candidate against its source imagery.<br>→ Design requirement: keep image evidence and its catalog measurements in the same investigation context.<br>→ Interface response: image and catalog views appear together in the prototype.]</p>
-                <p>[“The same sky region is observed at different frequencies and times.”<br>→ Operationally: a candidate can look different across surveys and releases.<br>→ Design requirement: make survey coverage and frequency context visible during comparison.<br>→ Interface response: the prototype maps survey availability over time and frequency.]</p>
-                <p>[“Researchers select parameters from personal expertise and intuition.”<br>→ Operationally: the useful measurements depend on the question being explored.<br>→ Design requirement: let researchers choose a shortlist of parameters for visualization.<br>→ Interface response: researchers select parameters before mapping candidate objects.]</p>
+                <h2>Discovery</h2>
                 <p>
-                    A frontend UX probe in Figma based on close observation of researchers’ working methods and habits. The probe makes explicit the availability and coverage of public sky survey data over time and frequency, and incorporates a dimensionality reduction flow so that researchers can define potential objects of interest, drawing from personal expertise and intuition.
+                    Terms like <em>exploratory research</em>, <em>hypothesis formation</em>, and <em>anomaly detection</em> may sound straightforward, but understanding what they involved in practice for our scientists was challenging. <span class="highlight">Each scientist’s research problem was specific, and the available data varied widely, so there were no representative user flows to design for. I needed to correct my assumptions and clarify which needs were shared across researchers’ workflows.</span> I used conversational diagrams and paper prototypes to frame the direction and align on interaction goals.
                 </p>
+
+                <figure class="image-gallery" data-gallery aria-label="Digital Sky Surveys interface sketches">
+
+                    <img class="gallery-image" src="media/cahill-problemdef.webp" alt="A diagram mapping scientist workflows. Arrows link related terms and processes.">
+                    <figcaption class="gallery-caption" aria-live="polite">Methodology map situating the project within scientists’ workflows: where does the tool intervene?</figcaption>
+                    <div class="gallery-controls" aria-label="Gallery controls">
+                        <button class="gallery-prev" type="button" aria-label="Previous image">←</button>
+                        <span class="gallery-count" aria-live="polite">1 of 2</span>
+                        <button class="gallery-next" type="button" aria-label="Next image">→</button>
+                    </div>
+                    <script type="application/json" class="gallery-slides">[
+                        {"src":"media/cahill-problemdef.webp","alt":"A diagram mapping scientist workflows. Arrows link related terms and processes.","caption":"Methodology map situating the project within scientists’ workflows: where does the tool intervene?"},
+                        {"src":"media/cahill-comms.webp","alt":"Screenshots of annotations on astronomy papers, including follow-up questions for scientists.","caption":"Consulting the literature to develop questions and align on the tool’s purpose."}
+                    ]</script>
+                </figure>
                 
+                <figure class="image-gallery" data-gallery aria-label="Digital Sky Surveys interface sketches">
+                    <img class="gallery-image" src="media/cahill-workflow.webp" alt="Various sketches of user interfaces on paper and sticky notes, pinned to a gray board.">
+                    <figcaption class="gallery-caption" aria-live="polite">Extrapolating hypothesized interaction needs for discussion and correction with scientists.</figcaption>
+                    <div class="gallery-controls" aria-label="Gallery controls">
+                        <button class="gallery-prev" type="button" aria-label="Previous image">←</button>
+                        <span class="gallery-count" aria-live="polite">1 of 2</span>
+                        <button class="gallery-next" type="button" aria-label="Next image">→</button>
+                    </div>
+                    <script type="application/json" class="gallery-slides">[
+                        {"src":"media/cahill-workflow.webp","alt":"Various sketches of user interfaces on paper and sticky notes, pinned to a gray board.","caption":"Extrapolating hypothesized interaction needs for discussion and correction with scientists."},
+                        {"src":"media/cahill-pivoted.webp","alt":"Two interface sketches. On the left, a tree diagram showing different subsets of a dataset. On the right, different datasets arranged side by side.","caption":"Sketches of two directions set aside after discussion with stakeholders: (left) plotting color-color diagrams; (right) exposing selected parameters."}
+                    ]</script>
+                </figure>
+
+                <p>These artifacts led me to explore different visualizations and ask our partners whether any offered a meaningful opportunity. I considered plotting across bandpass filters and pairs of parameters, following field conventions. Conversations with scientists helped identify these as lower-priority approaches: though useful, existing tools already supported plotting and this would likely reveal little about the underlying data. Ultimately, the prototype focused on <span class="highlight">making data coverage explicit so that researchers could validate and verify data across images and their corresponding catalogs</span>.</p>
+
+                <figure>
+                    <img src="media/cahill-rubiks.webp" alt="A person holding up a sketch of a grid of images against a laptop screen open on a similar digital sketch.">
+                    <figcaption>Sketching a way to navigate through a single object as it appears across frequencies and data releases.</figcaption>
+                </figure>
+
+                <p>Influenced by the interaction affordances of Rubik’s cubes and video game navigation, I developed a “locking” interaction during co-design sessions with a researcher. By locking on different variables (e.g. timestamp of data release or specific frequency), scientists in different subdomains can move flexibly through the data.</p>
+
+                <h2>System</h2>
+                <p>The final prototype presents a sample workflow, from loading a researcher’s list of objects to inspecting relevant images.</p>
+
+                <h2><em>1, Setup rooted in researcher habits</em></h2>
+                <p>Work starts with the researcher’s workbook at the bottom and reference public data at the top, pre-populated based on specific frequencies. The researcher inputs a shortlist of potentially relevant parameters to constrain their pool of candidate objects.</p>                
                 <figure>
                     <img src="media/cahill-dimensionality-gr.webp" alt="An application interface in dark mode with white text. There are three panels side by side at the bottom, the middle panel full of items that have been selected for mapping and visualization. Selected items are highlighted in pink.">
-                    <figcaption>Work starts with a loaded catalog (stats at the bottom) and a couple sky surveys for visual reference, selected at the top based on specific frequencies. The researcher inputs a shortlist of potentially relevant parameters to map objects of interest via a dimensionality reduction algorithm.</figcaption>
+                    <figcaption>The interface situates the researcher’s list of candidate objects (bottom) in the context of public data releases (top).</figcaption>
                 </figure>
                 
-                <figure>
-                    <img src="media/cahill-catalogdensity-gr.webp" alt="A dark mode user interface screenshot. The screen is vertically segmented in three sections, the top expanded to show datasets released over the years, each represented as a thin rectangle. A hovered over dataset shows additional info in a pink panel.">
-                    <figcaption>Expanding the survey data map shows image availability and capture schedules across the years. Each data release includes finer details, such as instrument sensitivity. This surface allows for high-level context that is otherwise scattered across observatory websites.</figcaption>
+
+                <h2><em>2, Data Coverage</em></h2>
+                <p>Expanding the survey data map shows image availability and capture schedules across the years. Each data release includes finer details, such as instrument sensitivity. This surface allows for high-level context that is otherwise scattered across observatory websites.</p>
+
+                <figure class="video-gallery cahill-video-gallery">
+                    <div class="cahill-video-frame">
+                        <video class="gallery-video" controls preload="metadata" aria-label="Coverage map panel">
+                            <source src="media/coverage-map.mp4" type="video/mp4">
+                            Your browser does not support HTML video.
+                        </video>
+                    </div>
+                    <figcaption class="gallery-caption">Previewing imagery available from the same year across data releases.</figcaption>
                 </figure>
-                <p>Influenced by the interaction affordances of Rubik’s cubes and video game navigation, the probe enables locking navigation on either time or frequency to view potential objects systematically. Each row of images correlates to an individual potential cosmic object for direct comparison. Additional features enable close-up zooming in on images.</p>
+                <p>Data coverage over time persists in the left sidebar, where users may swap out sky survey imagery and compare different surveys directly via updated imagery.</p>
                 <figure>
                     <img src="media/cahill-densityfreq-gr.webp" alt="A dark mode user interface: a horizontal panel at the top shows selected datasets highlighted in pink; to the left is a vertical panel that shows the focused dataset’s availability over time as short horizontal lines. The main panel displays rows of cosmic objects as captured across electromagnetic wavelengths.">
-                    <figcaption>Data coverage over time persists in the left sidebar, where users may swap out sky survey imagery and compare different surveys directly via updated imagery.</figcaption>
+                    <figcaption>Survey information remains accessible when inspecting imagery up close.</figcaption>
                 </figure>
 
-                <!-- Suggested replacement for the existing Impact paragraph and heading below. -->
-                <h2>[What the probe established]</h2>
-                <p>[The prototype and stakeholder sessions explored a shared interface for comparing survey images, catalog measurements, and data coverage. It was presented to the broader research group and prompted discussion of possible next directions.]</p>
-                <h2>[What remained unresolved]</h2>
-                <p>[This was a Figma research probe, not a production implementation. It did not establish the prototype’s effect on research outcomes or long-term workflow efficiency. A next iteration could investigate how researchers use these linked views during a specific analysis task.]</p>
-                <h2 class="replace-target">Impact</h2>
-                <p class="replace-target">Designed as a UX probe rather than a production deliverable, the prototype unites fragmented, high-dimensional survey data into a single interface via the locking affordance. Validated by our Caltech stakeholders and later presented to their broader research group,
-                    the work opened up a follow-up conversation about future directions and opportunities for LLM integration to make researcher workflows and analysis more reproducible.
-                </p>
+                <h2><em>3, Locked Navigation</em></h2>
+                <p>Each row of images corresponds to a potential cosmic object, allowing for direct comparison. Here, with the interface locked on time, moving horizontally makes it quick to compare the same object across frequencies. Noise and other image artifacts become immediately visible, which can help scientists choose which datasets to prioritize.</p>
+
+                <figure class="video-gallery cahill-video-gallery">
+                    <div class="cahill-video-frame">
+                        <video class="gallery-video" controls preload="metadata" aria-label="Locked navigation">
+                            <source src="media/locked-nav.mp4" type="video/mp4">
+                            Your browser does not support HTML video.
+                        </video>
+                    </div>
+                    <figcaption class="gallery-caption">A scroll through the data, anchored within observations captured in the same year.</figcaption>
+                </figure>
+
+                <h2>Impact</h2>
+                <p>While this work remained a frontend prototype, it was validated by our Caltech stakeholders and later presented to their broader research group, opening up a follow-up conversation about future directions and opportunities for LLM integration to make researcher workflows and analysis more reproducible.</p>
+
+
             </div>
         </main>
     </body>

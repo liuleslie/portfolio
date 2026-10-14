@@ -9,139 +9,63 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <header class="sticky project-nav"><div class="header-left"><p class="header-name"><a href="index.html">← Back to Index</a></p></div><div class="header-right"><p class="header-name"><a href="hindsight.html">Next Case Study →</a></p></div></header>
-        <main class="project-main">
-            <div class="abstract-hero" role="img" aria-label="Simplified representation of a disputes case review workflow: case context, supporting information, and review decision.">
-                <div class="abstract-flow"><span>Case context</span><b aria-hidden="true">→</b><span>Supporting information</span><b aria-hidden="true">→</b><span>Review decision</span></div>
-                <p>Simplified workflow representation; no Mercury interface or internal process documentation shown.</p>
+        <header class="sticky project-nav">
+            <div class="header-left">
+                <p class="header-name"><a href="index.html">← Back to Index</a></p>
             </div>
+            <div class="header-right">
+                <p class="header-name"><a href="cahill.html">Next Case Study →</a></p>
+            </div>
+        </header>
+        
+        <main class="project-main">
+            <img class="project-hero" src="media/mer-summative.webp" alt=".">
+
             <h1 class="project-title">Mercury</h1>
             
             <aside class="project-sidebar">
                 <p>@ Mercury (Risk organization)</p>
-                <p>10 weeks, <br>Summer 2026</p>
+                <p>12 weeks, <br>Summer 2026</p>
                 <p>Role: product design intern</p>
-                <p>Mentors:  <br>Alex Price, <br>Shiv Tomar;  <br>collaborated with  <br>Disputes Operations,  <br>Engineering,  <br>and Product (PM Devon Holmes)</p>
+                <p>Mentors: <br>Alex Price, <br>Shiv Tomar; <br>collaborated with <br>Disputes Operations, <br>Engineering, <br>and Product <br>(PM Devon Holmes)</p>
             </aside>
             
             <div class="project-body">
-
-                <!-- 
-                storytelling beats:
-
-- pragmatic commercial product judgment + initiative + operating inside organizational constraints.
-- existing commercial product → enter a messy operational system → identify concrete friction → prioritize interventions → ship improvements within organizational/technical constraints
-
-
-Mercury
-What is actually possible and worthwhile to change? How do you make meaningful progress when the biggest problems are outside your scope? System diagnosis → organizational/technical constraints → leverage → surgical implementation.
-
-code contribs / “shipping”: live product + shadowing → inspect implementation → reason through changes with Claude/codebase → locate/reuse existing patterns → implement → local testing → ephemeral environment → automated checks → designer + engineer review → PR → production
-
-
-1. Initiative / problem finding — you weren't simply handed a feature brief.
-2. Product judgment — you found multiple opportunities and determined which were worth pursuing.
-3. Operating within constraints — engineering capacity, existing systems, risk/ops requirements, internship timeline, etc.
-4. Detailed interaction + UI craft — enough inspectable screens to answer the C3 criticism.
-5. Shipping / organizational effect — two interventions shipped; the process model itself became useful beyond your project.
-
-
-central story: was asked to improve Disputes tooling, but the highest-leverage problems I found required organizational and platform changes that couldn't happen within my internship. With no dedicated engineering capacity, I identified smaller interventions I could safely ship myself that moved specialists toward the internal platform without disrupting the other Risk teams that depended on it.
-
-user advocacy ↔ organizational constraints
-high-leverage systemic problems ↔ what can actually ship
-shared platform ↔ team-specific workflow
-desired platform adoption ↔ dependence on legacy/external tooling
-design ambition ↔ engineering bandwidth
-internship timeframe ↔ platform migration timeframe
-
-Frequency
-- Does this actually occur enough to matter?
- - → Amplitude + recent-quarter caseload/data queries.
-
-Workflow value
-- Does fixing it reduce friction or unnecessary movement into legacy tooling?
-
-Technical feasibility
-- Can I implement it using frontend-accessible data, existing components/tokens, and no dedicated backend work?
-
-Blast radius
-- Can I change it without unintentionally altering the shared platform for Risk teams I haven't researched?
-
-
-
-
-
-
-
-
-
-
-
-
-                # Overview
                 
+                <p class="blurb">I worked with Mercury’s Disputes team to understand how specialists investigate cases and how internal tools could better support their work. With limited engineering capacity, I combined cross-functional research with hands-on implementation to take targeted improvements into production.</p>
 
+                <h2>Challenge</h2>
+                <p>As a recovery team, Disputes specialists are the final line of defense for customers trying to recoup their funds. Each case is unique: the volume of disputed transactions affects specialists’ cognitive burden, regulation governs response time, and customer communications shape the quality of usable evidence.</p>
 
-                # Problem
+                <h2>Discovery and Scoping</h2>
+                <p>I joined with a broad brief to improve the efficiency, reliability, and auditability of specialists’ internal tooling, rather than a predetermined feature to design.</p>
 
-                Discovery (research, scope, my role)
-                - frequent + consequential (impact) + aligned with platform adoption + frontend-feasible + safely scoped.
-
-                Restraint
-                - shared surfaces affecting teams you hadn't researched;
-                - broader platform initiatives you weren't part of;
-                - engineering projects already addressing some problems;
-                - operational problems that shouldn't become product features;
-                - backend dependencies you couldn't responsibly change;
-                - speculative AI opportunities whose prerequisites weren't sufficiently understood.
-
-                # Fixes
-
-
-                # Process
-                - how I use LMs
-
-                live product + shadowing
-                → inspect implementation
-                → reason through changes with Claude/codebase
-                → locate/reuse existing patterns
-                → implement
-                → local testing
-                → ephemeral environment
-                → automated checks
-                → designer + engineer review
-                → PR
-                → production
-
-
-
-                # Impact
-
-
-
-                # Reflection
-
-
+                <p>I combined Operations shadowing and interviews with AI-assisted investigation across internal SOPs, engineering documentation, and codebases. Using MCP-connected tools, I could independently navigate institutional knowledge and inspect how operational procedures were represented in software. Product analytics helped contextualize my observations from specialist interviews and in assessing the prevalence and consequences of observed workflow friction. I synthesized this research into a data-informed process map detailing Ops workflows end-to-end.</p>
                 
+                <p><span class="highlight">The research brought several realities into view—all true at once, but unevenly synced.</span> Operations managed live caseloads, while Engineering, Product, and Design worked across longer planning and delivery cycles. While SOPs provided shared guidance, they did not fully capture the intricacies and situational judgment of everyday investigations. Improving internal tooling therefore meant considering how specialists could absorb changes while maintaining their performance.</p>
+
+                <p>Some opportunities depended on broader organizational and technical changes beyond my internship. Others belonged to Ops or were already being addressed by the product roadmap. This pushed me to ask, <span class="highlight">what would make the tooling more useful now, within the changes I could responsibly deliver?</span> With limited dedicated engineering capacity, I focused on recurring workflow friction that I could address through contained frontend changes.</p>
+
+                <h2>Making Targeted Changes</h2>
+                <p>
+                    I scoped five tooling improvements and shipped two: reorganizing workspace modules to better align with specialist workflows, and reducing visual noise in high-volume cases.
+                </p>
+                <p>
+                    I implemented changes directly in the production codebase, using Claude Code to inspect the live application and explore approaches, reusing existing components and design tokens in my proposed fixes. I validated these via local testing and an ephemeral environment, opening pull requests and working with my design mentor and engineers through code review and rollout—all the while keeping Ops in the loop.
+                </p>
+                <p>
+                    Working within a platform shared by multiple teams also meant being deliberate about the scope of each change, avoiding unintended effects on shared surfaces that other teams used.
+                </p>
+                <p>
+                    AI accelerated code exploration and implementation, but determining which changes were worthwhile and interpreting operator feedback remained collaborative decisions. One proposed improvement was left unshipped after testing surfaced a backend dependency that couldn’t be safely resolved within the internship.
+                </p>
+
+                <h2>Impact</h2>
+                <p>Beyond the shipped improvements, my process map became a shared onboarding resource across Operations, Engineering, and Design. It continued to support the team after my internship, including helping the incoming senior designer get up to speed on the Disputes domain.</p>
                 
-                -->
-<!--                 
-                <h2>The opportunity</h2>
-                <p>Disputes operators were expected to move from legacy tools to Mercury’s centralized internal platform, but usage data showed they still left the platform during investigations—even for information it already contained. I spent two months shadowing investigations, interviewing five operators, their manager, and subject-matter experts, and mapping the end-to-end disputes process.</p>
-                <p>The research pointed to both habit and interface friction: operators had been trained on the legacy workflow, while a cluttered internal platform made useful case context hard to find. I mapped the points where operators exited and focused on changes that could help them stay in Mercury.</p>
-                <h2>From observations to scope</h2>
-                <p>Net-new features were not on the roadmap, so I aligned with the Disputes PM on a narrower goal: remove specific reasons investigators had to leave Mercury for legacy tools. I validated each change with the operators who would use it, then implemented two focused frontend improvements for a team of about 60.</p>
-                <div class="abstract-flow abstract-steps" aria-label="Two workflow improvements identified and shipped.">
-                    <span>Workflow friction identified</span><b aria-hidden="true">→</b><span>2 improvements shipped</span>
-                </div>
-                <p class="editorial-note">Simplified summary of the work; no internal tooling or interface is depicted.</p>
-                <h2>What shipped</h2>
-                <p>I removed irrelevant, high-noise modules to make important case context easier to find, and shipped a second focused improvement to address another point where investigators left the platform. I wrote the frontend code and coordinated with Engineering because the surface was shared across teams. The first change was featured in a cross-functional newsletter as a tooling improvement shaped around how operators work.</p>
-                <h2>Additional product work</h2>
-                <p>I also contributed to a customer-facing mobile survey. That work informed an end-to-end process map of dependencies and opportunities to move work into the internal platform.</p>
-                <h2>Reflection</h2>
-                <p>Shadowing operators helped me connect the reasons they relied on legacy tools to concrete interface changes. By aligning with Product on a focused scope and validating with the people doing the work, I was able to ship improvements within the existing roadmap and shared engineering environment.</p> -->
+                <h2>(More available on request)</h2>
+                <p>Internal workflows and interfaces are omitted here. Please get in touch on <a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a> to discuss my research, design decisions, and implementation approach. Additional materials can be shared where permitted.</p>
+
             </div>
         </main>
     </body>

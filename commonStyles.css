@@ -10,6 +10,7 @@
     --lighter:  #dedede;
     --lightest2: #f1f1f1;
     --lightest:  #f5f5f5;
+    --highlighted: rgba(255, 255, 167, 0.807);
     /* --hover-bg: #FFFFFF; */
 
     /* Space
@@ -83,6 +84,9 @@ a {
     text-decoration: none;
 }
 a:hover { color: var(--text); text-decoration: 1px var(--muted) solid underline }
+
+/* —— Highlighted text for emphasis and callouts */
+.highlight { background-color: var(--highlighted) }
 
 /* ── Header ─────────────────────────────── */
 .header-name {
@@ -197,11 +201,29 @@ figcaption {
 .gallery-ready .gallery-controls { display: flex; }
 .image-gallery > .gallery-caption, .image-gallery > .gallery-controls { margin-top:0.5em }
 .video-gallery { display: grid; grid-template-columns: auto 1fr; align-items: start; column-gap: var(--sp-2); }
-.video-gallery > .gallery-video { grid-column: 1 / -1; width: 100%; height: auto; }
+.video-gallery > .gallery-video { grid-column: 1 / -1; width: 100%; height: auto%; }
 .video-gallery > .gallery-video { color-scheme: light; border-radius: 0.25em; }
 .video-gallery > .gallery-caption { grid-column: 2; margin-top: 0.5em; }
 .video-gallery > .gallery-video::-webkit-media-controls-panel {
     background-color: var(--lightest);
+}
+.cahill-video-gallery {
+    display: block;
+}
+.cahill-video-frame {
+    width:100%;
+    /* width: min(100%, 960px); */
+    margin-inline: auto;
+    padding: clamp(0.75rem, 3vw, 2rem);
+    background: #dedede;
+    border-radius: 0.75rem;
+}
+.cahill-video-frame > .gallery-video {
+    display: block;
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 0.5rem;
 }
 .gallery-controls button {
     appearance: none;
