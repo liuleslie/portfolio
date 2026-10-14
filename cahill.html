@@ -27,7 +27,7 @@ Visual exploration or aesthetic preference.
         <title>Digital Sky Surveys — Leslie Liu</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="z-llfavi.svg">
+        <link rel="icon" type="image/x-icon" href="z-llfavi-work.svg">
         <link rel="stylesheet" href="commonStyles.css">
         <script src="script.js" defer></script>
         <base target="_self">
@@ -71,7 +71,7 @@ Visual exploration or aesthetic preference.
                 </figure>
                 <figure>
                     <img src="media/cahill-bands.webp" alt="Six crops of the same region of the cosmos and objects across different frequencies, arranged in a grid. The images range in color, some in warm reds and oranges, others in cool blue and black. They also range in resolution: objects’ shapes change across frequencies.">
-                    <figcaption>Observations of the same region of sky vary across surveys in frequency, temporal coverage, resolution, and image quality—complicating the comparison of imagery and associated catalog data.</figcaption>
+                    <figcaption>Observations of the same region of the sky vary across surveys in frequency, temporal coverage, resolution, and image quality—complicating the comparison of imagery and associated catalog data.</figcaption>
                 </figure>
 
 
@@ -112,7 +112,7 @@ Visual exploration or aesthetic preference.
                     ]</script>
                 </figure>
 
-                <p>These artifacts led me to explore different visualizations and ask our partners whether any offered a meaningful opportunity. I considered plotting across bandpass filters and pairs of parameters, following field conventions. Conversations with scientists helped identify these as lower-priority approaches: though useful, existing tools already supported plotting and this would likely reveal little about the underlying data. Ultimately, the prototype focused on <span class="highlight">making data coverage explicit so that researchers could validate and verify data across images and their corresponding catalogs</span>.</p>
+                <p>These artifacts led me to explore different visualizations and ask our partners whether any offered a meaningful opportunity. I considered plotting across bandpass filters and pairs of parameters, following conventions in the field. Conversations with scientists helped identify these as lower-priority approaches: though useful, existing tools already supported plotting, and additional visualizations would likely reveal little about the underlying data. Ultimately, the prototype focused on <span class="highlight">making data coverage explicit so that researchers could validate and verify data across images and their corresponding catalogs</span>.</p>
 
                 <figure>
                     <img src="media/cahill-rubiks.webp" alt="A person holding up a sketch of a grid of images against a laptop screen open on a similar digital sketch.">
@@ -124,7 +124,7 @@ Visual exploration or aesthetic preference.
                 <h2>System</h2>
                 <p>The final prototype presents a sample workflow, from loading a researcher’s list of objects to inspecting relevant images.</p>
 
-                <h2><em>1, Setup rooted in researcher habits</em></h2>
+                <h2><em>1. Setup Rooted in Researcher Habits</em></h2>
                 <p>Work starts with the researcher’s workbook at the bottom and reference public data at the top, pre-populated based on specific frequencies. The researcher inputs a shortlist of potentially relevant parameters to constrain their pool of candidate objects.</p>                
                 <figure>
                     <img src="media/cahill-dimensionality-gr.webp" alt="An application interface in dark mode with white text. There are three panels side by side at the bottom, the middle panel full of items that have been selected for mapping and visualization. Selected items are highlighted in pink.">
@@ -132,7 +132,7 @@ Visual exploration or aesthetic preference.
                 </figure>
                 
 
-                <h2><em>2, Data Coverage</em></h2>
+                <h2><em>2. Data Coverage</em></h2>
                 <p>Expanding the survey data map shows image availability and capture schedules across the years. Each data release includes finer details, such as instrument sensitivity. This surface allows for high-level context that is otherwise scattered across observatory websites.</p>
 
                 <figure class="video-gallery cahill-video-gallery">
@@ -150,8 +150,8 @@ Visual exploration or aesthetic preference.
                     <figcaption>Survey information remains accessible when inspecting imagery up close.</figcaption>
                 </figure>
 
-                <h2><em>3, Locked Navigation</em></h2>
-                <p>Each row of images corresponds to a potential cosmic object, allowing for direct comparison. Here, with the interface locked on time, moving horizontally makes it quick to compare the same object across frequencies. Noise and other image artifacts become immediately visible, which can help scientists choose which datasets to prioritize.</p>
+                <h2><em>3. Locked Navigation</em></h2>
+                <p>Each row of images corresponds to a potential cosmic object, allowing for direct comparison. With the interface locked on time, moving horizontally allows researchers to quickly compare the same object across frequencies. Noise and other image artifacts become immediately visible, which can help scientists choose which datasets to prioritize.</p>
 
                 <figure class="video-gallery cahill-video-gallery">
                     <div class="cahill-video-frame">
@@ -164,9 +164,7 @@ Visual exploration or aesthetic preference.
                 </figure>
 
                 <h2>Impact</h2>
-                <p>While this work remained a frontend prototype, it was validated by our Caltech stakeholders and later presented to their broader research group, opening up a follow-up conversation about future directions and opportunities for LLM integration to make researcher workflows and analysis more reproducible.</p>
-
-
+                <p>While this work remained a frontend prototype, it was validated by our Caltech stakeholders and later presented to their broader research group. This prompted further discussion about future directions, including opportunities for LLM integration to make researcher workflows and analysis more reproducible.</p>
             </div>
         </main>
     </body>

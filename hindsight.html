@@ -6,7 +6,7 @@
         <title>Hindsight — Leslie Liu</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="z-llfavi.svg">
+        <link rel="icon" type="image/x-icon" href="z-llfavi-work.svg">
         <link rel="stylesheet" href="commonStyles.css">
         <script src="script.js" defer></script>
         <base target="_self">
@@ -42,7 +42,7 @@
 
                 <h2>Challenge</h2>
                 <p>
-                    The <a href="https://www.jpl.nasa.gov/missions/mars-2020-perseverance-rover/">Mars 2020 mission</a> requires meticulous coordination and communication across engineering, science, and operations to ensure that research on Mars is safe and efficient. In order to convey contextual environment and rover information for decision making, rover operators need to correlate snapshots of various data across several decoupled tools, a manually intensive process heavily reliant on personal memory. This results in significant cognitive burden, makes planning time-consuming, and presents a barrier during training of new personnel, given the reliance on unwritten, institutional knowledge.
+                    The <a href="https://www.jpl.nasa.gov/missions/mars-2020-perseverance-rover/">Mars 2020 mission</a> requires meticulous coordination and communication across engineering, science, and operations to ensure that research on Mars is safe and efficient. To assemble contextual information about the environment and rover for decision-making, rover operators need to correlate snapshots of various data across several decoupled tools, a labor-intensive process heavily reliant on personal memory. This results in significant cognitive burden, makes planning time-consuming, and presents a barrier when training new personnel, given the reliance on unwritten, institutional knowledge.
                 </p>
 
                 <figure>
@@ -51,11 +51,11 @@
                 </figure>
 
                 <h2>Scope</h2>
-                <p>End-to-end product development over the course of ten weeks. The first five involved exploratory design probes, and the final five weeks saw iterative usability testing as operational integration was under discussion. I owned interaction design, visual design, and prototyping. We wrapped up this project as a working application over a subset of mission data, having evaluated it with rover operators.</p>
+                <p>End-to-end product development over the course of ten weeks. The first five involved exploratory design probes, followed by five weeks of iterative usability testing as operational integration was being discussed. I owned interaction design, visual design, and prototyping. We wrapped up this project as a working application over a subset of mission data, having evaluated it with rover operators.</p>
 
                 <h2>Discovery</h2>
                 <p>
-                    Early explorations into data representation referenced graphical scores and dance notation (e.g. Labanotation) as a way to encode rover telemetry: <span class="highlight">how do operators construct a mental model of rover and environment conditions as they navigate data?</span> What levels of detail and hierarchy do they need, and would creating a shorthand be helpful when revisiting past drives?
+                    Early explorations into data representation referenced graphical scores and dance notation (e.g., Labanotation) as a way to encode rover telemetry: <span class="highlight">how do operators construct a mental model of rover and environment conditions as they navigate data?</span> What levels of detail and hierarchy do they need, and would creating a shorthand be helpful when revisiting past drives?
                 </p>
 
                 <figure>
@@ -90,7 +90,7 @@
                     Bringing this to the rover ops team, we soon cut this direction, favoring directness (showing the raw data directly) over abstraction. The anticipated cost of learning a new representation outweighed its expected utility. We pivoted to understanding <span class="highlight">how operators recognize and search for <em>similar</em> drives</span>.
                 </p>
                 <p>
-                    We ran a design probe asking operators to draw their most memorable drive, which emphasized the importance of the orbital map as the anchor for recalling obstacles and contextual nuances. We had assumed that imagining oneself as a rover would inform operators’ sensibilities; the probe suggested that they instead viewed drives through the lens of the onboard navigation software. This, together with rigorous training across shifts, contributes to operators’ specialized intuition.
+                    We ran a design probe asking operators to draw their most memorable drive, which emphasized the importance of the orbital map as the anchor for recalling obstacles and contextual nuances. We had assumed that imagining oneself as a rover would inform operators’ mental models; the probe suggested that they instead viewed drives through the lens of the onboard navigation software. This, together with rigorous training across shifts, contributes to operators’ specialized intuition.
                 </p>
 
                 <figure>
@@ -103,14 +103,14 @@
                 </p>
 
                 <h2>System</h2>
-                <p>We moved from rough Figma sketches to a React web application that serves as a search engine for past drives. From operator interviews, we approached the challenge of <em>similarity</em> by introducing two search modes.</p>
+                <p>We moved from rough Figma sketches to a React web application that serves as a search engine for past drives. Drawing on operator interviews, we addressed the challenge of <em>similarity</em> through two search modes.</p>
                 
-                <h2><em>1, Investigate</em>—search</h2>
-                <p>The first mode is a parameterized search with explicitly defined search criteria based on recalled thresholds, handy when operators have immediate, fresh context of their most recent shift.</p>
+                <h2><em>1. Investigate</em>—searching the archive</h2>
+                <p>The first mode is a parameterized search with explicitly defined search criteria based on recalled thresholds, useful when operators have fresh context from their most recent shift.</p>
 
                 <figure>
                     <img src="media/hindsight-parameter-gr.webp" alt="A dark slate-blue user interface closeup of a search panel in ‘parameter search’ mode, where the user has entered two numerical thresholds for ‘slope’ and ‘slip’ and is reviewing top search results. A secondary panel is open as the user adds another parameter: available parameters are grouped by data source.">
-                    <figcaption>Explicit parameterized search: rule entry supports no-click input; any telemetry is accessible to constrain the search.</figcaption>
+                    <figcaption>Explicit parameterized search: rule entry supports keyboard-first input; any telemetry channel can be used to constrain the search.</figcaption>
                 </figure>
                 <p>In the second mode, operators use a specific drive’s profile across self-defined telemetry channels as the query. <em>Functionally similar drives</em> are those whose data most closely aligns with the template, calculated using Dynamic Time Warping and ranked for comparison.</p>
                 <figure>
@@ -118,20 +118,20 @@
                     <figcaption>Implicit similarity search: hovering over a drive on the global (orbital) map offers a quick peek into its data.</figcaption>
                 </figure>
 
-                <h2><em>2, Analyze</em>—one drive, many representations</h2>
-                <p>To address the problem of fragmented data correlation, a playhead synchronizes playback of all data sources: the rover’s position on the orbital map, drive imagery, flight software logs, and other charts. With Golden Layout, the interface can be reorganized to suit operator preference, in practice often tiling across multiple monitors.</p>
+                <h2><em>2. Analyze</em>—one drive, many representations</h2>
+                <p>To address the problem of fragmented data correlation, a playhead synchronizes playback of all data sources: the rover’s position on the orbital map, drive imagery, flight software logs, and other charts. The tool’s  Golden Layout, the interface can be reorganized to suit operator preference (in practice often tiling across multiple monitors).</p>
 
                 <figure>
                     <img src="media/hindsight-playhead-gr.webp" alt="A dark slate-blue user interface with various panels displaying data of a drive segment on Martian terrain. On the left is the drive’s path on the map and rover imagery. To the right are sensor values in a graph and a long list of software logs.">
                     <figcaption>The same drive, explorable from any data source.</figcaption>
                 </figure>
 
-                <h2><em>3, Collaborate</em>—making tacit knowledge portable</h2>
+                <h2><em>3. Collaborate</em>—making tacit knowledge portable</h2>
                 <p>Deep-linking enables snapshots of precise window state so that Operations can share their searches with Science and Engineering.</p>
                 
                 <h2>Impact</h2>
-                <p>In usability testing sessions, one rover operator noted that Hindsight’s synchronized workspace enables operators to “explore the telemetry spatially, making it easier to understand how the terrain impacts the telemetry we’re observing.” Another operator anecdotally estimated that <span class="highlight">assembling telemetry of interest took 2–3 minutes with Hindsight, compared with the 15–20 minutes using existing tools.</span></p>
-                <p>We concluded this project with handoff to our Ops partners and a paper accepted into IEEE VIS 2026 <a href="https://arxiv.org/abs/2607.16537">(preprint on arXiv)</a>.</p>
+                <p>In usability testing sessions, one rover operator noted that Hindsight’s synchronized workspace enables operators to “explore the telemetry spatially, making it easier to understand how the terrain impacts the telemetry we’re observing.” Another operator estimated that <span class="highlight">assembling telemetry of interest took 2–3 minutes with Hindsight, compared with the 15–20 minutes using existing tools.</span></p>
+                <p>We concluded this project with a handoff to our ops partners and a paper accepted into IEEE VIS 2026 <a href="https://arxiv.org/abs/2607.16537">(preprint on arXiv)</a>.</p>
 
 
                 <!-- reflection section: risk is a currency you manage; difficult but safe -->
