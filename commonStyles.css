@@ -108,6 +108,7 @@ a:hover { color: var(--text); text-decoration: 1px var(--muted) solid underline 
 .header-links {
     display: flex;
     flex-direction: column;
+    align-items: flex-start; /* to avoid links stretching across flex container */
     gap: 0.25em;
     margin-bottom: var(--sp-2);
 }
@@ -115,6 +116,9 @@ a:hover { color: var(--text); text-decoration: 1px var(--muted) solid underline 
 details:hover { cursor: pointer }
 details summary { transition: 0.1s; }
 details summary:hover { background-color:var(--light-bg);transition:0.2s;}
+details.bio-more .open-label,
+details.bio-more[open] .closed-label { display: none; }
+details.bio-more[open] .open-label { display: inline; }
 details.header-bio { margin: 0; overflow: hidden; }
 /* details[open] { border-bottom: 1px var(--muted) dotted; } */
 
@@ -135,6 +139,7 @@ main section { margin-bottom: var(--sp-3); }
     font-weight: var(--weight-body);
     margin-bottom: 0;
     color:var(--text); 
+    width: fit-content;
 }
 main.index-main .project-title { font-size: 1.25em; }
 
