@@ -132,7 +132,96 @@ main section { margin-bottom: var(--sp-3); }
 
 .project-img-link { display: block; }
 
+.project-media {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: var(--gutter-m);
+}
+
+.project-media-single {
+    grid-template-columns: 1fr;
+    padding: var(--sp-2);
+    background: #DEDEDE;
+    border-radius: 0.33em;
+}
+
+.project-media-single .project-img-link {
+    width: 60%;
+    justify-self: center;
+}
+
+.project-location {
+    margin: 0;
+    color: var(--muted);
+}
+
+.project-heading {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0 0.5em;
+    margin-bottom: var(--sp-1);
+}
+
+.project-heading .project-title { display: inline; }
+
+.project-video-frame {
+    display: grid;
+    align-content: start;
+    justify-items: stretch;
+    padding: clamp(0.5rem, 2vw, 1.25rem);
+    background: #dedede;
+    border-radius: 0.33em;
+}
+
+.project-video-frame > .gallery-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    color-scheme: light;
+}
+
+.project-video-frame-offset {
+    padding-right: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    align-content: end;
+}
+
+.project-video-viewport {
+    width: 100%;
+    overflow: hidden;
+}
+
+.project-video-viewport > .gallery-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.33em 0 0 0;
+}
+
+.hindsight-project-video-frame {
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    overflow: hidden;
+}
+
+.hindsight-project-video-frame .project-video-viewport {
+    height: 100%;
+}
+
+.hindsight-project-video-frame .project-video-viewport > .gallery-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 0.33em;
+}
+
 .project-info { margin-top: var(--sp-2); }
+.project-media + .project-info { margin-top: var(--sp-2); }
 
 .project-title {
     display: block;
@@ -141,9 +230,9 @@ main section { margin-bottom: var(--sp-3); }
     color:var(--text); 
     width: fit-content;
 }
-main.index-main .project-title { font-size: 1.25em; }
 
 .project-desc {
+    margin-top: 0;
     margin-bottom: var(--sp-1);
 }
 
@@ -155,6 +244,16 @@ main.index-main .project-title { font-size: 1.25em; }
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 160ms ease, visibility 0s linear 160ms;
+}
+
+main.index-main section:hover .project-tags,
+main.index-main section:focus-within .project-tags {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
 }
 .project-tags li:not(:last-child)::after {
     content: '\00A0/\00A0';
@@ -369,9 +468,18 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
         align-items: start;
         margin-bottom: var(--sp-5);
     }
+    .project-heading { grid-column: 1 / -1; }
+    .project-media { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; column-gap: var(--gutter-d); }
     .project-img-link { grid-column: 1 / 7; }
-    .project-info     { grid-column: 7 / -1; margin-top: 0; }
-    .project-tags     { margin-top: var(--sp-3); flex-direction: column; }
+    .project-video-frame { grid-column: 7 / -1; }
+    .project-video-frame-offset {
+        padding-top: calc((100% - 4 * var(--gutter-d)) / 20);
+        padding-left: calc((100% - 4 * var(--gutter-d)) / 10);
+    }
+    .project-media-single .project-img-link { grid-column: 1 / -1; width: 50%; }
+    .project-info     { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; margin-top: var(--sp-2); }
+    .project-desc     { grid-column: 1 / 7; }
+    .project-tags     { grid-column: 7 / -1; margin-top: 0; flex-direction: column; }
     .project-tags li:not(:last-child)::after { content: none; }
     main.index-main .project-title { margin-bottom: 0.25em; }
 
@@ -420,11 +528,18 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
     
     #various-intro { grid-column: 5 / -3; margin-bottom:var(--sp-5) }
     /* Without this, the <p> is itself a grid item of #various-intro's subgrid and defaults to spanning just 1 of its 5 columns */
-    footer { grid-column: 1 / 6; margin-top: var(--sp-4); margin-bottom: var(--sp-4) }
+    footer { grid-column: 1 / 6; margin-top: var(--sp-5); margin-bottom: var(--sp-4) }
 
     #various-intro > *, footer > * { grid-column: 1 / -1; }
 }
 @media (max-width: 900px) {
+    main.index-main .project-media {
+        grid-template-columns: 1fr;
+    }
+    main.index-main .project-media > .project-img-link,
+    main.index-main .project-media > .project-video-frame {
+        grid-column: 1 / -1;
+    }
     main.project-main .project-title { font-size: 1.25em; margin-top:1em }
     .project-entry + .project-entry {
         margin-top:var(--sp-5);
