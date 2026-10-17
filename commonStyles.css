@@ -325,7 +325,7 @@ figcaption {
 .cahill-video-gallery {
     display: block;
 }
-.cahill-video-frame {
+.project-video-frame-centered {
     width:100%;
     /* width: min(100%, 960px); */
     margin-inline: auto;
@@ -333,7 +333,7 @@ figcaption {
     background: #dedede;
     border-radius: 0.75rem;
 }
-.cahill-video-frame > .gallery-video {
+.project-video-frame-centered > .gallery-video {
     display: block;
     width: 70%;
     height: auto;
