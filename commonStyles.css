@@ -544,6 +544,9 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
     #various-intro > *, footer > * { grid-column: 1 / -1; }
 }
 @media (max-width: 900px) {
+    main.index-main .project-tags {
+        display: none;
+    }
     main.index-main .project-media {
         grid-template-columns: 1fr;
     }
