@@ -24,130 +24,109 @@
         <main class="project-main">
             <img class="project-hero" src="media/hindsight-summative-gr.webp" alt="A dark slate-blue interface of a visualization tool titled ‘M2020 Hindsight’ with various panels displaying segments of a drive on Martian terrain. In the main area to the right are an enlarged image of a map, charts, and camera imagery.">
 
-            <h1 class="project-title">Hindsight</h1>
+            <h1 class="project-title hindsight-project-title">Hindsight</h1>
+            <div class="hindsight-intro">
+                <p class="blurb">A visualization and retrieval tool for Perseverance rover operators to find and compare past drives across mission data.</p>
+            </div>
 
-            <aside class="project-sidebar">
-                <p>@ NASA <br>Jet Propulsion Laboratory</p>
-                <p>10 weeks, <br>Summer 2025</p>
-                <p>Role: design lead</p>
-                <p>Team: <a href="https://lukefiorante.com/">Luke Fiorante</a> <br>(engineering lead)</p>
-                <p>JPL Partners: <br>Sammi Lei, <br>Darwin Chiu</p>
-                <p>Advisors: <br>Krys Blackwood, <br>Santiago Lombeyda, <br>Hillary Mushkin, <br>Maggie Hendrie, <br>Scott Davidoff</p>
+            <aside class="project-sidebar hindsight-project-sidebar">
+                <p>10 weeks, Summer 2025 @ NASA Jet Propulsion Laboratory.</p>
+                <p>JPL Partners: Sammi Lei, Darwin Chiu.</p>
+                <p>Role: design lead. Team: <a href="https://lukefiorante.com/">Luke Fiorante</a> (engineering lead)</p>
+
+                <p>Advisors: Krys Blackwood, Santiago Lombeyda, Hillary Mushkin, Maggie Hendrie, Scott Davidoff</p>
             </aside>
 
-            <div class="project-body">
-                <p class="blurb">A visualization and retrieval tool for Perseverance rover operators to find and compare past drives across mission data.</p>
-
-                <!-- a tool that incorporates a search engine for operators to more easily surface similar past drives from the mission, whether via discrete, human-defined conditions, or algorithmically inferred based on functional similarity to a reference drive.  -->
-
-                <h2>Challenge</h2>
-                <p>
-                    The <a href="https://www.jpl.nasa.gov/missions/mars-2020-perseverance-rover/">Mars 2020 mission</a> requires meticulous coordination and communication across engineering, science, and operations to ensure that research on Mars is safe and efficient. To assemble contextual information about the environment and rover for decision-making, rover operators need to correlate snapshots of various data across several decoupled tools, a labor-intensive process heavily reliant on personal memory. This results in significant cognitive burden, makes planning time-consuming, and presents a barrier when training new personnel, given the reliance on unwritten, institutional knowledge.
-                </p>
-
-                <figure>
-                    <img src="media/hindsight-tools.webp" alt="Three screenshots of robotics software, charting rover drives on Mars and simulating terrain conditions for rover drive planning.">
-                    <figcaption>A subset of the tools that rover operators use. Screenshots via <a href="https://www-robotics.jpl.nasa.gov/what-we-do/applications/user-interfaces/?view=default">JPL Robotics</a>.</figcaption>
-                </figure>
-
-                <h2>Scope</h2>
-                <p>End-to-end product development over the course of ten weeks. The first five involved exploratory design probes, followed by five weeks of iterative usability testing as operational integration was being discussed. I owned interaction design, visual design, and prototyping. We wrapped up this project as a working application over a subset of mission data, having evaluated it with rover operators.</p>
-
-                <h2>Discovery</h2>
-                <p>
-                    Early explorations into data representation referenced graphical scores and dance notation (e.g., Labanotation) as a way to encode rover telemetry: <span class="highlight">how do operators construct a mental model of rover and environment conditions as they navigate data?</span> What levels of detail and hierarchy do they need, and would creating a shorthand be helpful when revisiting past drives?
-                </p>
-
-                <figure>
-                    <img src="media/hindsight-drSig-0.webp" alt="A pencil sketch of various glyphs corresponding to different data sources on the left. To the right, 2D strips of overlaid graphs and charts and isometric views that show the graphs’ composite layers.">
-                    <figcaption>Sketches of glyph, barcode, and exploded representations of drives.</figcaption>
-                </figure>
-
-                <figure class="image-gallery" data-gallery aria-label="Hindsight interface sketches">
-                    <img class="gallery-image" src="media/hindsight-drSig-1.webp" alt="Sketch of a Mars rover drive data search interface, where similar drives are superimposed on a map.">
-                    <figcaption class="gallery-caption" aria-live="polite">Five recent search results for past drives, where each drive is represented as a long strip.</figcaption>
-                    <div class="gallery-controls" aria-label="Gallery controls">
-                        <button class="gallery-prev" type="button" aria-label="Previous image">←</button>
-                        <span class="gallery-count" aria-live="polite">1 of 4</span>
-                        <button class="gallery-next" type="button" aria-label="Next image">→</button>
+            <div class="project-body hindsight-project-body">
+                <!-- <div class="hindsight-intro">
+                    <p class="blurb">A visualization and retrieval tool for Perseverance rover operators to find and compare past drives across mission data.</p>
+                </div> -->
+                <section class="hindsight-writeup-section">
+                    <h2>Challenge</h2>
+                    <div class="hindsight-supplemental-layout">
+                        <aside class="hindsight-supplemental-media">
+                        <figure class="small-media smaller-media">
+                            <img src="media/hindsight-tools.webp" alt="Three screenshots of robotics software, charting rover drives on Mars and simulating terrain conditions for rover drive planning.">
+                            <figcaption>A subset of the tools that rover operators use. Screenshots via <a href="https://www-robotics.jpl.nasa.gov/what-we-do/applications/user-interfaces/?view=default">JPL Robotics</a>.</figcaption>
+                        </figure>
+                        </aside>
+                        <div class="hindsight-supplemental-copy-column">
+                            <p>The <a href="https://www.jpl.nasa.gov/missions/mars-2020-perseverance-rover/">Mars 2020 mission</a> requires meticulous coordination and communication across engineering, science, and operations to ensure that research on Mars is safe and efficient. To assemble contextual information about the environment and rover for decision-making, rover operators need to correlate snapshots of various data across several decoupled tools, a labor-intensive process heavily reliant on personal memory. This results in significant cognitive burden, makes planning time-consuming, and presents a barrier when training new personnel, given the reliance on unwritten, institutional knowledge.</p>
+                        </div>
                     </div>
-                    <script type="application/json" class="gallery-slides">[
-                        {"src":"media/hindsight-drSig-1.webp","alt":"Sketch of a Mars rover drive data search interface, where similar drives are superimposed on a map.","caption":"Sketches of the drive signature flexing across zoom levels, starting with the barcode representation zoomed to a local view of a single drive."},
-                        {"src":"media/hindsight-drSig-2.webp","alt":"Sketch of a Mars rover drive data search interface, where small glyphs are overlaid atop past drive segments.","caption":"Zooming out to the global (mission-level) view, the barcode shrinks to a stamp, corresponding to a pre-defined variable, here fault type."},
-                        {"src":"media/hindsight-drSig-3.webp","alt":"Sketch of a Mars rover drive data search interface, where small glyphs are overlaid atop past drive segments. Next to the cursor is a list of categories to control the glyphs’ presentation.","caption":"Toggling across variables via scrollwheel to inspect mission drives across discrete factors."},
-                        {"src":"media/hindsight-drSig-4.webp","alt":"Sketch of a Mars rover drive data search interface, where small glyphs are overlaid atop past drive segments. The cursor hovers over a search result.","caption":"Selecting a specific search result for cross-drive comparison."}
-
-                    ]</script>
-                </figure>
-                <figure class="video-gallery">
-                    <video class="gallery-video" autoplay muted loop controls preload="metadata" aria-label="Hindsight textons visualization">
-                        <source src="media/hindsight-textons.mp4" type="video/mp4">
-                        Your browser does not support HTML video.
-                    </video>
-                    <figcaption class="gallery-caption">An alternate p5.js code sketch exploring layering multiple maps atop each other and selectively inspecting the underlying map through a viewfinder.</figcaption>
-                </figure>
-                <p>
-                    Bringing this to the rover ops team, we soon cut this direction, favoring directness (showing the raw data directly) over abstraction. The anticipated cost of learning a new representation outweighed its expected utility. We pivoted to understanding <span class="highlight">how operators recognize and search for <em>similar</em> drives</span>.
-                </p>
-                <p>
-                    We ran a design probe asking operators to draw their most memorable drive, which emphasized the importance of the orbital map as the anchor for recalling obstacles and contextual nuances. We had assumed that imagining oneself as a rover would inform operators’ mental models; the probe suggested that they instead viewed drives through the lens of the onboard navigation software. This, together with rigorous training across shifts, contributes to operators’ specialized intuition.
-                </p>
-
-                <figure>
-                    <img src="media/hindsight-drivedrawing.webp" alt="Three photos of people holding sketches of a map and rover, drawn from aerial view. In the rightmost image, a person holds their sketch with their left hand, their right pointing at a computer screen showing a map with drive segments.">
-                    <figcaption>Operators’ sketches of memorable drives.</figcaption>
-                </figure>
-
-                <p>
-                    We learned that operators need direct access to raw data and their understanding of similarity is more nuanced than explicit parameter matching. We needed to ensure that our solution could support different entry points (ways of searching) into the mission archive and communicate context in a shareable way. 
-                </p>
-
-                <h2>System</h2>
-                <p>We moved from rough Figma sketches to a React web application that serves as a search engine for past drives. Drawing on operator interviews, we addressed the challenge of <em>similarity</em> through two search modes.</p>
-                
-                <h2><em>1. Investigate</em>—searching the archive</h2>
-                <p>The first mode is a parameterized search with explicitly defined search criteria based on recalled thresholds, useful when operators have fresh context from their most recent shift.</p>
-
-                <figure>
+                </section>
+                <section class="hindsight-writeup-section">
+                    <h2>Scope</h2>
+                    <p>End-to-end product development over the course of ten weeks. The first five involved exploratory design probes, followed by five weeks of iterative usability testing as operational integration was being discussed. I owned interaction design, visual design, and prototyping. We wrapped up this project as a working application over a subset of mission data, having evaluated it with rover operators.</p>
+                </section>
+                <section class="hindsight-writeup-section">
+                    <h2>Discovery</h2>
+                    <p>Early explorations into data representation referenced graphical scores and dance notation (e.g., Labanotation) as a way to encode rover telemetry: <span class="highlight">how do operators construct a mental model of rover and environment conditions as they navigate data?</span> What levels of detail and hierarchy do they need, and would creating a shorthand be helpful when revisiting past drives?</p>
+                    <div class="hindsight-image-row two-up">
+                        <figure>
+                            <img src="media/hindsight-drSig-0.webp" alt="A pencil sketch of various glyphs corresponding to different data sources on the left. To the right, 2D strips of overlaid graphs and charts and isometric views that show the graphs’ composite layers.">
+                            <figcaption>Sketches of glyph, barcode, and exploded representations of drives.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="media/hindsight-drSig-1.webp" alt="Sketch of a Mars rover drive data search interface, where similar drives are superimposed on a map.">
+                            <figcaption>Five recent search results for past drives, where each drive is represented as a long strip.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="hindsight-supplemental-layout">
+                        <aside class="hindsight-supplemental-media">
+                            <figure class="video-gallery small-media">
+                                <video class="gallery-video" autoplay muted loop controls preload="metadata" aria-label="Hindsight textons visualization">
+                                    <source src="media/hindsight-textons.mp4" type="video/mp4">
+                                    Your browser does not support HTML video.
+                                </video>
+                                <figcaption class="gallery-caption">An alternate p5.js code sketch exploring layering multiple maps atop each other and selectively inspecting the underlying map through a viewfinder.</figcaption>
+                            </figure>
+                            <figure class="small-media">
+                                <img src="media/hindsight-drivedrawing.webp" alt="Three photos of people holding sketches of a map and rover, drawn from aerial view. In the rightmost image, a person holds their sketch with their left hand, their right pointing at a computer screen showing a map with drive segments.">
+                                <figcaption>Operators’ sketches of memorable drives.</figcaption>
+                            </figure>
+                        </aside>
+                        <div class="hindsight-supplemental-copy-column">
+                            <p class="hindsight-supplemental-copy">Bringing this to the rover ops team, we soon cut this direction, favoring directness (showing the raw data directly) over abstraction. The anticipated cost of learning a new representation outweighed its expected utility. We pivoted to understanding <span class="highlight">how operators recognize and search for <em>similar</em> drives</span>.</p>
+                            <p class="hindsight-supplemental-copy">We ran a design probe asking operators to draw their most memorable drive, which emphasized the importance of the orbital map as the anchor for recalling obstacles and contextual nuances. We had assumed that imagining oneself as a rover would inform operators’ mental models; the probe suggested that they instead viewed drives through the lens of the onboard navigation software. This, together with rigorous training across shifts, contributes to operators’ specialized intuition.</p>
+                            <p class="hindsight-supplemental-copy">We learned that operators need direct access to raw data and their understanding of similarity is more nuanced than explicit parameter matching. We needed to ensure that our solution could support different entry points (ways of searching) into the mission archive and communicate context in a shareable way.</p>
+</div>
+</section>
+<section class="hindsight-writeup-section"><h2>System</h2>
+<p>We moved from rough Figma sketches to a React web application that serves as a search engine for past drives. Drawing on operator interviews, we addressed the challenge of <em>similarity</em> through two search modes.</p>
+</section>
+<section class="hindsight-writeup-section"><h2><em>1. Investigate</em>—searching the archive</h2>
+<p>The first mode is a parameterized search with explicitly defined search criteria based on recalled thresholds, useful when operators have fresh context from their most recent shift.</p>
+<div class="hindsight-image-row"><figure class="wide-media">
                     <img src="media/hindsight-parameter-gr.webp" alt="A dark slate-blue user interface closeup of a search panel in ‘parameter search’ mode, where the user has entered two numerical thresholds for ‘slope’ and ‘slip’ and is reviewing top search results. A secondary panel is open as the user adds another parameter: available parameters are grouped by data source.">
                     <figcaption>Explicit parameterized search: rule entry supports keyboard-first input; any telemetry channel can be used to constrain the search.</figcaption>
-                </figure>
-                <p>In the second mode, operators use a specific drive’s profile across self-defined telemetry channels as the query. <em>Functionally similar drives</em> are those whose data most closely aligns with the template, calculated using Dynamic Time Warping and ranked for comparison.</p>
-                <figure>
+                </figure></div>
+<p>In the second mode, operators use a specific drive’s profile across self-defined telemetry channels as the query. <em>Functionally similar drives</em> are those whose data most closely aligns with the template, calculated using Dynamic Time Warping and ranked for comparison.</p>
+<div class="hindsight-image-row"><figure class="wide-media">
                     <img src="media/hindsight-similarity-gr.webp" alt="A dark slate-blue user interface with a search panel in ‘similarity search’ mode, where top results are shown in a list. To the right of the panel is a map of Martian terrain with the rover path in white and a selected drive highlighted in blue. The selected drive’s statistics and imagery are shown in an overlaid slate-blue panel.">
                     <figcaption>Implicit similarity search: hovering over a drive on the global (orbital) map offers a quick peek into its data.</figcaption>
-                </figure>
-
-                <h2><em>2. Analyze</em>—one drive, many representations</h2>
-                <p>To address the problem of fragmented data correlation, a playhead synchronizes playback of all data sources: the rover’s position on the orbital map, drive imagery, flight software logs, and other charts. With Golden Layout, the interface can be reorganized to suit operator preference (in practice often tiling across multiple monitors).</p>
-
-                <figure class="video-gallery cahill-video-gallery">
+                </figure></div>
+</section>
+<section class="hindsight-writeup-section">
+    <h2><em>2. Analyze</em>—one drive, many representations</h2>
+<p>To address the problem of fragmented data correlation, a playhead synchronizes playback of all data sources: the rover’s position on the orbital map, drive imagery, flight software logs, and other charts. With Golden Layout, the interface can be reorganized to suit operator preference (in practice often tiling across multiple monitors).</p>
+<div class="hindsight-image-row"><figure class="video-gallery cahill-video-gallery">
                     <div class="project-video-frame-centered">
-                        <video class="gallery-video" autoplay muted loop controls preload="metadata" aria-label="Coverage map panel">
+                        <video class="gallery-video wide-media" autoplay muted loop controls preload="metadata" aria-label="Coverage map panel">
                             <source src="media/hindsight-playhead.mp4" type="video/mp4">
                             Your browser does not support HTML video.
                         </video>
                     </div>
                     <figcaption class="gallery-caption">Syncrhonized playback of all data sources.</figcaption>
-                </figure>
-<!--                 
-                <figure>
-                    <img src="media/hindsight-playhead-gr.webp" alt="A dark slate-blue user interface with various panels displaying data of a drive segment on Martian terrain. On the left is the drive’s path on the map and rover imagery. To the right are sensor values in a graph and a long list of software logs.">
-                    <figcaption>The same drive, explorable from any data source.</figcaption>
-                </figure> -->
-
-                <h2><em>3. Collaborate</em>—making tacit knowledge portable</h2>
-                <p>Deep-linking enables snapshots of precise window state so that Operations can share their searches with Science and Engineering.</p>
-                
-                <h2>Impact</h2>
-                <p>In usability testing sessions, one rover operator noted that Hindsight’s synchronized workspace enables operators to “explore the telemetry spatially, making it easier to understand how the terrain impacts the telemetry we’re observing.” Another operator estimated that <span class="highlight">assembling telemetry of interest took 2–3 minutes with Hindsight, compared with the 15–20 minutes using existing tools.</span></p>
-                <p>We concluded this project with a handoff to our ops partners and a paper accepted into IEEE VIS 2026 <a href="https://arxiv.org/abs/2607.16537">(preprint on arXiv)</a>.</p>
-
-
-                <!-- reflection section: risk is a currency you manage; difficult but safe -->
-                 
-                <!-- <h2>Reflection</h2>
-                <p></p> -->
+                </figure></div>
+</section>
+<section class="hindsight-writeup-section"><h2><em>3. Collaborate</em>—making tacit knowledge portable</h2>
+<p>Deep-linking enables snapshots of precise window state so that Operations can share their searches with Science and Engineering.</p>
+</section>
+<section class="hindsight-writeup-section"><h2>Impact</h2>
+<p>In usability testing sessions, one rover operator noted that Hindsight’s synchronized workspace enables operators to “explore the telemetry spatially, making it easier to understand how the terrain impacts the telemetry we’re observing.” Another operator estimated that <span class="highlight">assembling telemetry of interest took 2–3 minutes with Hindsight, compared with the 15–20 minutes using existing tools.</span></p>
+<p>We concluded this project with a handoff to our ops partners and a paper accepted into IEEE VIS 2026 <a href="https://arxiv.org/abs/2607.16537">(preprint on arXiv)</a>.</p>
+</section>
             </div>
         </main>
     </body>

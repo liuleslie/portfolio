@@ -296,6 +296,13 @@ main.project-main .project-title {
 .project-body h2 + p { margin-top: 0; }
 .project-body h2:not(:first-of-type) + p { margin-top: var(--sp-2); }
 .project-body p { margin-bottom: 0em; }
+.hindsight-writeup-section > h2 {
+    position: sticky;
+    top: calc(var(--header-h) + var(--sp-1));
+    align-self: start;
+    z-index: 5;
+    /* background: var(--bg); */
+}
 
 
 figure { margin: var(--sp-3) 0 var(--sp-2); }
@@ -531,6 +538,116 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
     .video-gallery { grid-template-columns: subgrid; column-gap: var(--gutter-d); }
     .video-gallery > .gallery-caption { grid-column: 4 / -1; }
 
+    /* Hindsight: metadata and interleaved writeup */
+    .hindsight-project-sidebar {
+        color: var(--muted);
+        font-size: 0.8em;
+        grid-column: 3 / -1;
+        grid-row: 4;
+        display: grid;
+        grid-template-columns: subgrid;
+        margin-top: 0;
+    }
+    main.project-main > .hindsight-project-title { grid-column: 1 / 4; grid-row: 2; align-self: baseline; }
+    .hindsight-project-sidebar p { margin: 0; }
+    .hindsight-project-sidebar p:nth-child(odd) { grid-column: 1 / 5; }
+    .hindsight-project-sidebar p:nth-child(even) { grid-column: 5 / 10; }
+    main.project-main > .hindsight-intro { grid-column: 7 / -1; grid-row: 2; align-self: baseline; }
+    .hindsight-project-body {
+        grid-column: 1 / -1;
+        grid-row: 5;
+        display: grid;
+        grid-template-columns: repeat(var(--cols-d), minmax(0, 1fr));
+        column-gap: var(--gutter-d);
+        align-content: start;
+    }
+    .hindsight-intro,
+    .hindsight-writeup-section {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(var(--cols-d), minmax(0, 1fr));
+        column-gap: var(--gutter-d);
+        align-items: start;
+        align-content: start;
+    }
+    .hindsight-writeup-section { margin-bottom: var(--sp-5); }
+    .hindsight-writeup-section::before {
+        content: "";
+        grid-column: 1 / -1;
+        border-top: 1px solid var(--light);
+        margin-bottom: var(--sp-2);
+    }
+    .hindsight-intro > p { grid-column: 1 / -1; margin: 0 0 var(--sp-3); }
+    .hindsight-writeup-section > p { grid-column: 7 / -1; margin: 0 0 var(--sp-3); }
+    .hindsight-writeup-section > h2 {
+        grid-column: 1 / 4;
+        grid-row: 2;
+        margin: 0;
+        align-self: start;
+    }
+    .hindsight-image-row {
+        grid-column: 2 / -1;
+        display: grid;
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+        column-gap: var(--gutter-d);
+        row-gap: var(--sp-3);
+        align-content: start;
+        margin-bottom: var(--sp-3);
+    }
+    .hindsight-image-row > figure { grid-column: 6 / -1; min-width: 0; margin: 0; }
+    .hindsight-image-row.two-up > figure { grid-column: span 5; }
+    .hindsight-image-row > figure.wide-media,
+    .hindsight-image-row > figure:has(.wide-media) { grid-column: 3 / -1; }
+    .hindsight-image-row > figure.small-media,
+    .hindsight-image-row > figure:has(.small-media),
+    .hindsight-image-row > video.small-media { grid-column: 2 / span 4; }
+    .hindsight-image-row > video.small-media { display: block; width: 100%; }
+    .hindsight-image-row figcaption { font-size: 0.8em; }
+    .hindsight-image-row .image-gallery.gallery-ready,
+    .hindsight-image-row .video-gallery { display: block; }
+    .hindsight-image-row .image-gallery > .gallery-caption,
+    .hindsight-image-row .video-gallery > .gallery-caption { margin-top: var(--sp-1); }
+    .hindsight-image-row.two-up .image-gallery { position: relative; }
+    .hindsight-image-row.two-up .overlay-gallery-controls {
+        position: absolute;
+        inset: auto var(--sp-1) var(--sp-1);
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        padding: var(--sp-1);
+        border-radius: 0.25em;
+        background: rgb(0 0 0 / 55%);
+        z-index: 1;
+    }
+    .hindsight-image-row.two-up .overlay-gallery-controls .gallery-prev { justify-self: start; }
+    .hindsight-image-row.two-up .overlay-gallery-controls .gallery-next { justify-self: end; }
+    .hindsight-image-row.two-up .overlay-gallery-controls .gallery-count { color: white; }
+    .hindsight-supplemental-layout {
+        grid-column: 2 / -1;
+        display: grid;
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+        column-gap: var(--gutter-d);
+        align-self: start;
+        align-content: start;
+        margin-bottom: var(--sp-3);
+    }
+    .hindsight-writeup-section:first-of-type > .hindsight-supplemental-layout { grid-row: 2; }
+    .hindsight-supplemental-media {
+        grid-column: 1 / 6;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: var(--gutter-d);
+        row-gap: var(--sp-3);
+        align-content: start;
+        min-width: 0;
+    }
+    .hindsight-supplemental-media > .small-media { grid-column: 1 / -2; min-width: 0; margin: 0; }
+    .hindsight-supplemental-media > .smaller-media { grid-column: 2 / span 3; }
+    .hindsight-supplemental-media > .video-gallery { display: block; }
+    .hindsight-supplemental-media figcaption { font-size: 0.8em; }
+    .hindsight-supplemental-copy-column { grid-column: 6 / -1; min-width: 0; }
+    .hindsight-supplemental-copy-column > p { margin: 0 0 var(--sp-3); }
+
     /* #various-intro is a direct child of main.project-main (sibling of .project-entry), so it's scoped here, not under .project-body */
     #various-intro, footer {
         display: grid;
@@ -561,6 +678,18 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
     .project-sidebar {
         margin-bottom:var(--sp-3);
     }
+    .hindsight-project-sidebar { display: block; }
+    .hindsight-project-body { display: block; }
+    .hindsight-intro,
+    .hindsight-writeup-section { display: block; margin-bottom: var(--sp-5); }
+    .hindsight-writeup-section::before { display: block; margin-bottom: var(--sp-2); }
+    .hindsight-writeup-section > h2 { margin: var(--sp-2) 0 var(--sp-1); }
+    .hindsight-image-row { display: block; }
+    .hindsight-image-row > figure { margin: var(--sp-3) 0 var(--sp-2); }
+    .hindsight-supplemental-layout,
+    .hindsight-supplemental-media { display: block; }
+    .hindsight-supplemental-media > .small-media { margin: var(--sp-3) 0 var(--sp-2); }
+    .hindsight-supplemental-copy-column > p { margin: var(--sp-3) 0; }
     .abstract-flow { flex-direction: column; }
     .abstract-flow b { transform: rotate(90deg); }
 }
