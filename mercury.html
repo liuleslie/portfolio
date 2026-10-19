@@ -21,42 +21,62 @@
         <main class="project-main">
             <img class="project-hero" src="media/mer-summative.webp" alt=".">
 
-            <h1 class="project-title">Mercury</h1>
+            <h1 class="project-title case-study-title">Mercury</h1>
+
+            <!-- 
+            <aside class="project-sidebar case-study-meta">
+                <p>10 weeks, Summer 2025 @ NASA Jet Propulsion Laboratory.</p>
+                <p>JPL Partners: Sammi Lei, Darwin Chiu.</p>
+                <p>Role: design lead. Team: <a href="https://lukefiorante.com/">Luke Fiorante</a> (engineering lead)</p>
+                <p>Advisors: Krys Blackwood, Santiago Lombeyda, Hillary Mushkin, Maggie Hendrie, Scott Davidoff</p>
+            </aside>
+             -->
             
-            <aside class="project-sidebar">
-                <p>@ Mercury (Risk organization)</p>
-                <p>12 weeks, <br>Summer 2026</p>
+            <aside class="project-sidebar case-study-meta">
+                <div class="case-study-meta-left">
+                <p>12 weeks, Summer 2026 @ Mercury (Risk organization)</p>
                 <p>Role: product design intern</p>
-                <p>Mentors: <br>Alex Price, <br>Shiv Tomar; <br>collaborated with <br>Disputes Operations, <br>Engineering <br>(Jen Reiss, <br>Annie Chen), <br>and Product <br>(PM Devon Holmes)</p>
+                </div>
+                <div class="case-study-meta-right">
+                <p>Mentors: Alex Price, Shiv Tomar; collaborated with Disputes Operations, Engineering (Jen Reiss, Annie Chen), and Product (PM Devon Holmes)</p>
+                </div>
             </aside>
             
-            <div class="project-body">
-                
+            <div class="case-study-intro">
                 <p class="blurb">I worked with Mercury’s Disputes team to understand how specialists investigate cases and how internal tools could better support their work. With limited engineering capacity, I combined cross-functional research with hands-on implementation to take targeted improvements into production.</p>
+            </div>
 
-                <h2>Challenge</h2>
-                <p>As a recovery team, Disputes specialists are the final line of defense for customers trying to recoup their funds. Each case is unique: the volume of disputed transactions affects specialists’ cognitive burden, regulations govern response time, and customer communications shape the quality of usable evidence.</p>
+            <div class="project-body case-study-body">
+                <section class="case-study-section">
+                    <h2>Challenge</h2>
+                    <p>As a recovery team, Disputes specialists are the final line of defense for customers trying to recoup their funds. Each case is unique: the volume of disputed transactions affects specialists’ cognitive burden, regulations govern response time, and customer communications shape the quality of usable evidence.</p>
+                </section>
 
-                <h2>Discovery and Scoping</h2>
-                <p>I joined with a broad brief to improve the efficiency, reliability, and auditability of specialists’ internal tooling, rather than a predetermined feature to design.</p>
+                <section class="case-study-section">
+                    <h2>Discovery and Scoping</h2>
+                    <p>I joined with a broad brief to improve the efficiency, reliability, and auditability of specialists’ internal tooling, rather than a predetermined feature to design.</p>
+                    <p>I combined Operations shadowing and interviews with AI-assisted investigation across internal SOPs, engineering documentation, and codebases. Using MCP-connected tools, I could independently navigate institutional knowledge and inspect how operational procedures were represented in software. Product analytics helped contextualize my observations from specialist interviews and assess the prevalence and consequences of observed workflow friction. I synthesized this research into a data-informed process map detailing Ops workflows end-to-end.</p>
+                    <p><span class="highlight">The research revealed that while several realities were all true and viscerally felt, they were unevenly synced.</span> Teams worked along different timelines: as Operations managed live caseloads, Engineering, Product, and Design worked across longer planning and delivery cycles. While SOPs provided shared guidance, they did not fully capture the intricacies and situational judgment of everyday investigations. Improving internal tooling therefore meant considering how specialists could absorb changes while maintaining their performance.</p>
+                    <p>Some opportunities depended on broader organizational and technical changes beyond my internship and others belonged to Ops or were already being addressed by the product roadmap. This pushed me to ask, <span class="highlight">what would make the tooling more useful now, within the scope of changes I could responsibly deliver?</span> With limited dedicated engineering capacity, I focused on recurring workflow friction that I could address through contained frontend changes.</p>
+                </section>
 
-                <p>I combined Operations shadowing and interviews with AI-assisted investigation across internal SOPs, engineering documentation, and codebases. Using MCP-connected tools, I could independently navigate institutional knowledge and inspect how operational procedures were represented in software. Product analytics helped contextualize my observations from specialist interviews and assess the prevalence and consequences of observed workflow friction. I synthesized this research into a data-informed process map detailing Ops workflows end-to-end.</p>
-                
-                <p><span class="highlight">The research revealed that while several realities were all true and viscerally felt, they were unevenly synced.</span> Teams worked along different timelines: as Operations managed live caseloads, Engineering, Product, and Design worked across longer planning and delivery cycles. While SOPs provided shared guidance, they did not fully capture the intricacies and situational judgment of everyday investigations. Improving internal tooling therefore meant considering how specialists could absorb changes while maintaining their performance.</p>
+                <section class="case-study-section">
+                    <h2>Making Targeted Changes</h2>
+                    <p>I scoped five tooling improvements and shipped two: reorganizing workspace modules to better align with specialist workflows, and reducing visual noise in high-volume cases.</p>
+                    <p>I implemented changes directly in the production codebase, using Claude Code to inspect the live application, reusing existing components and design tokens in my proposed fixes. I validated these by testing in both local and ephemeral environments, opening pull requests and working with my design mentor and engineers through code review and rollout—all the while keeping Ops in the loop.</p>
+                    <p>Working within a platform shared by multiple teams also meant being deliberate about the scope of each change, avoiding unintended effects on shared surfaces that other teams used.</p>
+                    <p>AI accelerated code exploration and implementation, but determining which changes were worthwhile and interpreting Ops feedback remained collaborative decisions. One proposed improvement remained unshipped after testing surfaced a backend dependency that couldn’t be safely resolved within the internship.</p>
+                </section>
 
-                <p>Some opportunities depended on broader organizational and technical changes beyond my internship and others belonged to Ops or were already being addressed by the product roadmap. This pushed me to ask, <span class="highlight">what would make the tooling more useful now, within the scope of changes I could responsibly deliver?</span> With limited dedicated engineering capacity, I focused on recurring workflow friction that I could address through contained frontend changes.</p>
+                <section class="case-study-section">
+                    <h2>Impact</h2>
+                    <p>Beyond the shipped improvements, my process map became a shared onboarding resource across Operations, Engineering, and Design. It continued to support the team after my internship, including helping the incoming senior designer get up to speed on the Disputes domain.</p>
+                </section>
 
-                <h2>Making Targeted Changes</h2>
-                <p>I scoped five tooling improvements and shipped two: reorganizing workspace modules to better align with specialist workflows, and reducing visual noise in high-volume cases.</p>
-                <p>I implemented changes directly in the production codebase, using Claude Code to inspect the live application, reusing existing components and design tokens in my proposed fixes. I validated these by testing in both local and ephemeral environments, opening pull requests and working with my design mentor and engineers through code review and rollout—all the while keeping Ops in the loop.</p>
-                <p>Working within a platform shared by multiple teams also meant being deliberate about the scope of each change, avoiding unintended effects on shared surfaces that other teams used.</p>
-                <p>AI accelerated code exploration and implementation, but determining which changes were worthwhile and interpreting Ops feedback remained collaborative decisions. One proposed improvement remained unshipped after testing surfaced a backend dependency that couldn’t be safely resolved within the internship.</p>
-
-                <h2>Impact</h2>
-                <p>Beyond the shipped improvements, my process map became a shared onboarding resource across Operations, Engineering, and Design. It continued to support the team after my internship, including helping the incoming senior designer get up to speed on the Disputes domain.</p>
-                
-                <h2>(More available on request)</h2>
-                <p>Internal workflows and interfaces are omitted here. Please get in touch on <a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a> to discuss my research, design decisions, and implementation approach. Additional materials can be shared where permitted.</p>
+                <section class="case-study-section">
+                    <h2>(More available on request)</h2>
+                    <p>Internal workflows and interfaces are omitted here. Please get in touch on <a href="https://www.linkedin.com/in/liu-leslie">LinkedIn</a> to discuss my research, design decisions, and implementation approach. Additional materials can be shared where permitted.</p>
+                </section>
 
             </div>
         </main>
