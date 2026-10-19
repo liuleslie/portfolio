@@ -575,7 +575,7 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
         grid-template-columns: subgrid;
         margin-top: 0;
     }
-    main.project-main > .case-study-title { grid-column: 1 / 4; grid-row: 2; align-self: baseline; }
+    main.project-main > .case-study-title { grid-column: 1 / 5; grid-row: 2; align-self: baseline; }
     .case-study-meta-left { grid-column: 1 / span 4; }
     .case-study-meta-right { grid-column: 5 / span 5; }
     .case-study-meta p { margin: 0 0 var(--sp-1); }
