@@ -151,6 +151,18 @@ main section { margin-bottom: var(--sp-3); }
     justify-self: center;
 }
 
+/* Mercury's gray frame is part of the project link, while the image stays centered. */
+.mercury-project-media .project-img-link {
+    display: grid;
+    width: 100%;
+    justify-self: stretch;
+}
+
+.mercury-project-media .project-img-link img {
+    width: 60%;
+    justify-self: center;
+}
+
 .project-location {
     margin: 0;
     color: var(--muted);
@@ -171,7 +183,7 @@ main section { margin-bottom: var(--sp-3); }
     align-content: start;
     justify-items: stretch;
     padding: clamp(0.5rem, 2vw, 1.25rem);
-    background: #dedede;
+    background: var(--lighter);
     border-radius: 0.33em;
 }
 
@@ -371,7 +383,7 @@ figcaption {
 }
 .cahill-video-frame {
     padding: clamp(0.75rem, 3vw, 2rem);
-    background: #dedede;
+    background: var(--lighter);
     border-radius: 0.75rem;
 }
 .project-video-frame-centered {
@@ -379,7 +391,7 @@ figcaption {
     /* width: min(100%, 960px); */
     margin-inline: auto;
     padding: clamp(0.75rem, 3vw, 2rem);
-    background: #dedede;
+    background: var(--lighter);
     border-radius: 0.75rem;
 }
 .project-video-frame-centered > .gallery-video {
@@ -524,6 +536,7 @@ body.show-layout img { outline-color: hsla(280, 70%, 60%, 0.5); }
         padding-left: calc((100% - 4 * var(--gutter-d)) / 10);
     }
     .project-media-single .project-img-link { grid-column: 1 / -1; width: 50%; }
+    .mercury-project-media .project-img-link { width: 100%; }
     .project-info     { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; margin-top: var(--sp-2); }
     .project-desc     { grid-column: 1 / 7; }
     .project-tags     { grid-column: 7 / -1; margin-top: 0; flex-direction: column; }
